@@ -1,54 +1,97 @@
 import React from 'react';
 import styled from 'styled-components';
+import Icon from '../Icon';
+import Card from '../Card';
+import Text from '../Text';
+import Divider from '../Divider';
+import Identicon from '../../utils/Identicon';
+import Button from '../../inputs/Button';
+import NestedList from '../List';
 
 const Container = styled.div`
-  font-size: 1.5em;
-  min-height: 300px;
-  width: 100%;
-  background: LightGray;
+  height: 100%;
+  background-color: ${({ theme }) => theme.colors.background};
   display: grid;
-  grid-template-columns: 1fr 2fr;
-  grid-template-rows: 50px auto 60px;
-  grid-gap: 10px;
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: 54px 1fr;
   grid-template-areas:
-    'title title'
-    'navbar body'
-    'footer footer';
+    'topbar topbar'
+    'sidebar body';
 
-  @media (max-width: 400px) {
+  /* @media (max-width: 400px) {
     grid-template-columns: 1fr;
-    grid-template-rows: 50px auto 1fr;
+    grid-template-rows: 54px auto 1fr;
     grid-template-areas:
-      'title'
-      'navbar'
-      'body'
-      'footer';
-  }
+      'topbar'
+      'sidebar'
+      'body';
+  } */
 `;
 
-const Title = styled.div`
-  background: rgb(137, 180, 206);
-  grid-area: title;
+const Topbar = styled.nav`
+  background-color: white;
+  box-shadow: 0 2px 4px 0 rgba(212, 212, 211, 0.59);
+  border-bottom: 2px solid ${({ theme }) => theme.colors.separator};
+  z-index: 999;
+  grid-area: topbar;
 `;
-const Navbar = styled.div`
-  background: rgb(139, 131, 127);
-  grid-area: navbar;
+const Sidebar = styled.aside`
+  height: 100%;
+  background-color: ${({ theme }) => theme.colors.white};
+  border-right: 2px solid ${({ theme }) => theme.colors.separator};
+  grid-area: sidebar;
 `;
-const Body = styled.div`
-  background: rgb(193, 197, 197);
+
+const Body = styled.section`
+  margin: 24px 16px;
   grid-area: body;
 `;
-const Footer = styled.div`
-  background: rgb(158, 158, 158);
-  grid-area: footer;
+
+const WalletInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+const IconContainer = styled.div`
+  justify-content: space-around;
+  align-items: center;
+  padding: 8px 0;
 `;
 
 const Layout = (): React.ReactElement => (
   <Container>
-    <Title>Title</Title>
-    <Navbar>Navbar</Navbar>
-    <Body>Body</Body>
-    <Footer>footer</Footer>
+    <Topbar>Gnosis Logo</Topbar>
+    <Sidebar>
+      <WalletInfo>
+        <IconContainer>
+          <Identicon address="thisIsAnExample" size="md" />
+        </IconContainer>
+        <Icon size="md" type="circleDropdown" />
+
+        <Text size="xl">Safe Name</Text>
+        <Text size="sm">x058...DB78</Text>
+        <IconContainer>
+          <Icon size="sm" type="qrCode" />
+          <Icon size="sm" type="copy" />
+          <Icon size="sm" type="externalLink" />
+        </IconContainer>
+        <Button size="lg" color="primary" variant="contained">
+          New Transaction
+        </Button>
+      </WalletInfo>
+      <Divider />
+      <NestedList />
+      <Divider />
+      <Text size="sm">Help Center</Text>
+    </Sidebar>
+    <Body>
+      <Text size="lg" color="primary">
+        Assets
+      </Text>
+      <Card>Body</Card>
+    </Body>
   </Container>
 );
 
