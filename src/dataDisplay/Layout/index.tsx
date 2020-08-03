@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Icon from '../Icon';
+import IconText from '../IconText';
 import Card from '../Card';
 import Text from '../Text';
 import Divider from '../Divider';
@@ -45,6 +46,20 @@ const Sidebar = styled.aside`
 const Body = styled.section`
   margin: 24px 16px;
   grid-area: body;
+  display: flex;
+  flex-direction: column;
+  align-content: stretch;
+`;
+
+const MainContent = styled(Card)`
+  /* height: 100%; */
+  flex: 1 100%;
+  /* flex-direction: column;
+  align-content: stretch; */
+`;
+
+const Footer = styled.footer`
+  margin: 24px 16px;
 `;
 
 const WalletInfo = styled.div`
@@ -58,6 +73,15 @@ const IconContainer = styled.div`
   justify-content: space-around;
   align-items: center;
   padding: 8px 0;
+`;
+
+const StyledIconText = styled(IconText)`
+  font-size: 0.68em;
+  font-weight: 900;
+  line-height: 1.5;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0 0 16px 0;
 `;
 
 const Layout = (): React.ReactElement => (
@@ -77,20 +101,32 @@ const Layout = (): React.ReactElement => (
           <Icon size="sm" type="copy" />
           <Icon size="sm" type="externalLink" />
         </IconContainer>
-        <Button size="lg" color="primary" variant="contained">
+        <Button
+          size="md"
+          iconType="transactionsInactive"
+          color="primary"
+          variant="contained">
           New Transaction
         </Button>
       </WalletInfo>
       <Divider />
       <NestedList />
       <Divider />
+      <Icon size="md" type="question" />
       <Text size="sm">Help Center</Text>
     </Sidebar>
     <Body>
-      <Text size="lg" color="primary">
-        Assets
-      </Text>
-      <Card>Body</Card>
+      <StyledIconText
+        iconSize="sm"
+        textSize="sm"
+        color="primary"
+        iconType="assets"
+        text="Assets"
+      />
+      <MainContent>
+        <div>Body</div>
+      </MainContent>
+      <Footer>footer</Footer>
     </Body>
   </Container>
 );

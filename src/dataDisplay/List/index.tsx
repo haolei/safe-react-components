@@ -9,10 +9,22 @@ import Collapse from '@material-ui/core/Collapse';
 
 import Icon from '../Icon';
 import FixedIcon from '../FixedIcon';
-import Text from '../Text';
+//import Text from '../Text';
 
 const StyledListItemText = styled(ListItemText)`
-  font-family: Averta;
+  span {
+    font-family: ${({ theme }) => theme.fonts.fontFamily};
+    font-size: 0.68em;
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: 2px;
+    color: ${({ theme }) => theme.colors.secondaryLight};
+    text-transform: uppercase;
+  }
+`;
+
+const StyledListItemIcon = styled(ListItemIcon)`
+  min-width: 32px !important;
 `;
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -42,28 +54,28 @@ export default function NestedList() {
       aria-labelledby="nested-list-subheader"
       className={classes.root}>
       <ListItem button>
-        <ListItemIcon>
+        <StyledListItemIcon>
           <Icon size="md" type="assets" />
-        </ListItemIcon>
+        </StyledListItemIcon>
         <StyledListItemText primary="Assets" />
       </ListItem>
       <ListItem button>
-        <ListItemIcon>
+        <StyledListItemIcon>
           <Icon size="md" type="transactionsInactive" />
-        </ListItemIcon>
-        <ListItemText primary="Transactions" />
+        </StyledListItemIcon>
+        <StyledListItemText primary="Transactions" />
       </ListItem>
       <ListItem button>
-        <ListItemIcon>
+        <StyledListItemIcon>
           <Icon size="md" type="addressBook" />
-        </ListItemIcon>
-        <ListItemText primary="Address Book" />
+        </StyledListItemIcon>
+        <StyledListItemText primary="Address Book" />
       </ListItem>
       <ListItem button onClick={handleClick}>
-        <ListItemIcon>
+        <StyledListItemIcon>
           <Icon size="md" type="apps" />
-        </ListItemIcon>
-        <ListItemText primary="Apps" />
+        </StyledListItemIcon>
+        <StyledListItemText primary="Apps" />
         {open ? (
           <FixedIcon type="chevronUp" />
         ) : (
@@ -73,24 +85,30 @@ export default function NestedList() {
       <Collapse in={open} timeout="auto" unmountOnExit>
         <List component="div" disablePadding>
           <ListItem button className={classes.nested}>
-            <ListItemIcon><Icon size="md" type="apps" /></ListItemIcon>
-            <ListItemText primary="App 1" />
+            <StyledListItemIcon>
+              <Icon size="md" type="apps" />
+            </StyledListItemIcon>
+            <StyledListItemText primary="App 1" />
           </ListItem>
           <ListItem button className={classes.nested}>
-            <ListItemIcon><Icon size="md" type="apps" /></ListItemIcon>
-            <ListItemText primary="App 2" />
+            <StyledListItemIcon>
+              <Icon size="md" type="apps" />
+            </StyledListItemIcon>
+            <StyledListItemText primary="App 2" />
           </ListItem>
           <ListItem button className={classes.nested}>
-            <ListItemIcon><Icon size="md" type="apps" /></ListItemIcon>
-            <ListItemText primary="App 3" />
+            <StyledListItemIcon>
+              <Icon size="md" type="apps" />
+            </StyledListItemIcon>
+            <StyledListItemText primary="App 3" />
           </ListItem>
         </List>
       </Collapse>
       <ListItem button onClick={handleClick}>
-        <ListItemIcon>
+        <StyledListItemIcon>
           <Icon size="md" type="settings" />
-        </ListItemIcon>
-        <ListItemText primary="Settings" />
+        </StyledListItemIcon>
+        <StyledListItemText primary="Settings" />
         {open ? (
           <FixedIcon type="chevronUp" />
         ) : (
@@ -100,16 +118,22 @@ export default function NestedList() {
       <Collapse in={open} timeout="auto" unmountOnExit>
         <List component="div" disablePadding>
           <ListItem button className={classes.nested}>
-            <ListItemIcon><Icon size="md" type="settings" /></ListItemIcon>
-            <ListItemText primary="Setting 1" />
+            <StyledListItemIcon>
+              <Icon size="md" type="settings" />
+            </StyledListItemIcon>
+            <StyledListItemText primary="Setting 1" />
           </ListItem>
           <ListItem button className={classes.nested}>
-            <ListItemIcon><Icon size="md" type="settings" /></ListItemIcon>
-            <ListItemText primary="Setting 2" />
+            <StyledListItemIcon>
+              <Icon size="md" type="settings" />
+            </StyledListItemIcon>
+            <StyledListItemText primary="Setting 2" />
           </ListItem>
           <ListItem button className={classes.nested}>
-            <ListItemIcon><Icon size="md" type="settings" /></ListItemIcon>
-            <ListItemText primary="Setting 3" />
+            <StyledListItemIcon>
+              <Icon size="md" type="settings" />
+            </StyledListItemIcon>
+            <StyledListItemText primary="Setting 3" />
           </ListItem>
         </List>
       </Collapse>
