@@ -22,6 +22,18 @@ export const SimpleCheckbox = (): React.ReactElement => {
   );
 };
 
+export const CheckboxWithNodeLabel = (): React.ReactElement => {
+  const [enabled, setEnabled] = useState(true);
+  return (
+    <Checkbox
+      name="checkbox"
+      checked={enabled}
+      onChange={(_, checked) => setEnabled(checked)}
+      label={<div>This is a <strong>node</strong> label</div>}
+    />
+  );
+};
+
 export const WithError = (): React.ReactElement => {
   const [enabled, setEnabled] = useState(false);
   return (
