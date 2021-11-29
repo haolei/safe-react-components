@@ -1,21 +1,20 @@
-import React, { useEffect } from 'react';
-import TextFieldMui, {
-  StandardTextFieldProps,
-  TextFieldProps,
-} from '@material-ui/core/TextField';
-import { InputBaseProps, InputAdornment } from '@material-ui/core';
+import React from 'react';
+import TextFieldMui, { TextFieldProps } from '@material-ui/core/TextField';
+import InputAdornment from '@material-ui/core/InputAdornment';
 import styled from 'styled-components';
 
-type Props = Omit<TextFieldProps, 'InputProps' | 'variant' | 'error'> & {
+type Props = {
+  value: string;
+  label: string;
   readOnly?: boolean;
-  startAdornment?: React.ReactElement;
-  endAdornment?: React.ReactElement;
-  input?: Omit<StandardTextFieldProps['inputProps'], 'onChange'>;
-  // Final Form 'FieldProps' types: https://final-form.org/docs/react-final-form/types/FieldProps
   meta?: {
     error?: string;
   };
-};
+  input?: React.InputHTMLAttributes<HTMLInputElement>; // added for compatibility with react-final-form
+  startAdornment?: React.ReactElement;
+  endAdornment?: React.ReactElement;
+  className?: string;
+} & React.InputHTMLAttributes<HTMLInputElement>;
 
 const CustomTextField = styled((props: TextFieldProps) => (
   <TextFieldMui {...props} />
@@ -32,55 +31,73 @@ const CustomTextField = styled((props: TextFieldProps) => (
     }
 
     .MuiFormLabel-root.Mui-focused {
-      color: ${({ theme, meta }) =>
-        meta?.error ? theme.colors.error : theme.colors.primary};
+      color: ${({ theme, error }) =>
+        error ? theme.colors.error : theme.colors.primary};
     }
 
     .MuiFilledInput-underline:after {
       border-bottom: 2px solid
-        ${({ theme, meta }) =>
-          meta?.error ? theme.colors.error : theme.colors.primary};
+        ${({ theme, error }) =>
+          error ? theme.colors.error : theme.colors.primary};
     }
   }
 `;
 
-/**
- * @deprecated This TextField Component is coupled to React Final Form use TextFieldInput instead
- */
 function TextField({
-  input: inputProps,
+  input,
+  value,
+  onChange,
   meta,
-  label,
   readOnly,
+  label,
   startAdornment,
   endAdornment,
+  className,
   ...rest
 }: Props): React.ReactElement {
-  const customInputBaseProps: InputBaseProps = {
-    startAdornment: startAdornment ? (
-      <InputAdornment position="start">{startAdornment}</InputAdornment>
-    ) : null,
-    endAdornment: endAdornment ? (
-      <InputAdornment position="end">{endAdornment}</InputAdornment>
-    ) : null,
-    readOnly,
+  const customProps = {
+    error: meta && !!meta.error,
+    label: (meta && meta.error) || label,
+    variant: 'filled' as const,
+    InputProps: {
+      readOnly,
+      startAdornment: startAdornment ? (
+        <InputAdornment position="start">{startAdornment}</InputAdornment>
+      ) : null,
+      endAdornment: endAdornment ? (
+        <InputAdornment position="end">{endAdornment}</InputAdornment>
+      ) : null,
+    },
+    disabled: readOnly,
+    readOnly: readOnly,
   };
 
-  useEffect(() => {
-    if (process.env.NODE_ENV === 'development') {
-      console.warn('TextField is deprecated, use TextFieldInput instead');
-    }
-  }, []);
+  if (input) {
+    const { name, value, ...inputRest } = input;
+    return (
+      <CustomTextField
+        {...rest}
+        {...customProps}
+        inputProps={inputRest}
+        className={className}
+        size={undefined}
+        name={name}
+        checked={!!value}
+        color="primary"
+        value={value as string}
+      />
+    );
+  }
 
   return (
     <CustomTextField
       {...rest}
-      error={!!meta?.error}
-      label={meta?.error || label}
-      InputProps={customInputBaseProps}
-      inputProps={inputProps}
+      size={undefined}
+      {...customProps}
+      className={className}
+      value={value}
       color="primary"
-      variant="filled"
+      onChange={onChange}
     />
   );
 }
