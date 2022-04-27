@@ -29,7 +29,6 @@ export default create({
   inputBorderRadius: 4,
 
   brandTitle: 'Gnosis theme',
-  brandUrl: 'https://gnosis.io',
-  brandImage: 'https://miro.medium.com/max/1060/1*DZopze1Xtir7mZHraVNZ_w.png',
-  //brandImage: 'https://gnosis-safe.readthedocs.io/en/latest/_images/safe-banner.svg',
+  brandUrl: 'https://gnosis-safe.io',
+  brandImage: 'https://gnosis-safe.io/app/static/media/gnosis-safe-multisig-logo.6baa9880.svg',
 });
