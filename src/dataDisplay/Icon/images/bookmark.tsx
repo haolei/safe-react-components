@@ -2,12 +2,7 @@ import React from 'react'
 
 export default {
   sm: (
-    <svg
-      height="16"
-      width="12"
-      viewBox="0 0 12 12"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg">
+    <svg height="16" width="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g fill="none" fillRule="evenodd">
         <path
           className="icon-stroke"
@@ -20,12 +15,7 @@ export default {
     </svg>
   ),
   md: (
-    <svg
-      height="24"
-      width="20"
-      viewBox="0 0 12 12"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg">
+    <svg height="24" width="20" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g fill="none" fillRule="evenodd">
         <path
           className="icon-stroke"

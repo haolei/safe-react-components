@@ -33,12 +33,7 @@ type Props = {
   orientation: 'vertical' | 'horizontal'
 }
 
-const Stepper = ({
-  steps,
-  error,
-  activeStepIndex,
-  orientation,
-}: Props): React.ReactElement => {
+const Stepper = ({ steps, error, activeStepIndex, orientation }: Props): React.ReactElement => {
   return (
     <StepperMUI activeStep={activeStepIndex} orientation={orientation}>
       {steps.map((s, index) => {

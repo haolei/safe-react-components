@@ -10,9 +10,7 @@ export default {
   },
 }
 
-export const SimpleTexttext = (): React.ReactElement => (
-  <Text size="sm">Some Text...</Text>
-)
+export const SimpleTexttext = (): React.ReactElement => <Text size="sm">Some Text...</Text>
 
 export const Bold = (): React.ReactElement => (
   <Text size="sm" strong>

@@ -7,8 +7,7 @@ export default {
   title: 'Utils/Modals/ManageList',
   component: ManageListModal,
   parameters: {
-    componentSubtitle:
-      'A Modal to Manage a list by enabling/disabled list items',
+    componentSubtitle: 'A Modal to Manage a list by enabling/disabled list items',
   },
 }
 
@@ -35,8 +34,7 @@ export const SimpleModal = (): React.ReactElement => {
       id: '3',
       iconUrl: 'someUrl3',
       name: 'three',
-      description:
-        'Long desc ever since the 1500s do not finish over the ocean of this',
+      description: 'Long desc ever since the 1500s do not finish over the ocean of this',
       checked: true,
     },
   ])

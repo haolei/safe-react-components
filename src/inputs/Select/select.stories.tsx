@@ -30,9 +30,7 @@ export default {
   ],
 }
 
-export const SimpleSelect: Story<SelectInputProps> = (
-  args
-): React.ReactElement => {
+export const SimpleSelect: Story<SelectInputProps> = (args): React.ReactElement => {
   const [activeItemId, setActiveItemId] = useState('')
 
   return (

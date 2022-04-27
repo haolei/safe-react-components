@@ -1,8 +1,6 @@
 import React from 'react'
 import MenuItem from '@material-ui/core/MenuItem'
-import SelectMUI, {
-  SelectProps as SelectMuiProps,
-} from '@material-ui/core/Select'
+import SelectMUI, { SelectProps as SelectMuiProps } from '@material-ui/core/Select'
 import FormControl from '@material-ui/core/FormControl'
 import FormHelperText from '@material-ui/core/FormHelperText'
 import InputLabel from '@material-ui/core/InputLabel'
@@ -98,13 +96,7 @@ function Select({
         {items.map(i => {
           return (
             <MenuItem value={i.id} key={i.id}>
-              {i.iconUrl && (
-                <IconImg
-                  alt={i.label}
-                  onError={onFallbackImage}
-                  src={i.iconUrl}
-                />
-              )}
+              {i.iconUrl && <IconImg alt={i.label} onError={onFallbackImage} src={i.iconUrl} />}
               <div>
                 <Text size="sm" color="text">
                   {i.label}

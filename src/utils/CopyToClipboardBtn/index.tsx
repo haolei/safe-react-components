@@ -69,12 +69,7 @@ const CopyToClipboardBtn = ({
       onClick={onButtonClick}
       onKeyDown={onKeyDown}
       onMouseLeave={onButtonBlur}>
-      <Icon
-        size="sm"
-        color="icon"
-        type={iconType}
-        tooltip={clicked ? 'Copied' : tooltip}
-      />
+      <Icon size="sm" color="icon" type={iconType} tooltip={clicked ? 'Copied' : tooltip} />
     </StyledButton>
   )
 }

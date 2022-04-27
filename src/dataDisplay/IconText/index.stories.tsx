@@ -13,35 +13,11 @@ export default {
 export const Sizes = (): React.ReactElement => {
   return (
     <>
-      <IconText
-        iconSize="sm"
-        margin="xs"
-        textSize="sm"
-        iconType="add"
-        text="Some text"
-      />
-      <IconText
-        iconSize="sm"
-        margin="xs"
-        textSize="xl"
-        iconType="add"
-        text="Some text"
-      />
+      <IconText iconSize="sm" margin="xs" textSize="sm" iconType="add" text="Some text" />
+      <IconText iconSize="sm" margin="xs" textSize="xl" iconType="add" text="Some text" />
 
-      <IconText
-        iconSize="md"
-        margin="xs"
-        textSize="sm"
-        iconType="add"
-        text="Some text"
-      />
-      <IconText
-        iconSize="md"
-        margin="xs"
-        textSize="xl"
-        iconType="add"
-        text="Some text"
-      />
+      <IconText iconSize="md" margin="xs" textSize="sm" iconType="add" text="Some text" />
+      <IconText iconSize="md" margin="xs" textSize="xl" iconType="add" text="Some text" />
     </>
   )
 }

@@ -139,15 +139,11 @@ const EthHashInfo = ({
                   {shortName}:
                 </Text>
               )}
-              {shortenHash
-                ? textShortener(hash, shortenHash + 2, shortenHash)
-                : hash}
+              {shortenHash ? textShortener(hash, shortenHash + 2, shortenHash) : hash}
             </Text>
           )}
           {showCopyBtn && (
-            <CopyToClipboardBtn
-              textToCopy={shouldCopyShortName ? `${shortName}:${hash}` : hash}
-            />
+            <CopyToClipboardBtn textToCopy={shouldCopyShortName ? `${shortName}:${hash}` : hash} />
           )}
           {explorerUrl && <ExplorerButton explorerUrl={explorerUrl} />}
           {menuItems && <EllipsisMenu menuItems={menuItems} />}

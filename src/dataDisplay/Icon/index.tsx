@@ -87,13 +87,11 @@ const StyledIcon = styled.span<{ color?: ThemeColors }>`
   display: inline-flex;
 
   .icon-color {
-    fill: ${({ theme, color }) =>
-      color ? theme.colors[color] : theme.colors.icon};
+    fill: ${({ theme, color }) => (color ? theme.colors[color] : theme.colors.icon)};
   }
 
   .icon-stroke {
-    stroke: ${({ theme, color }) =>
-      color ? theme.colors[color] : theme.colors.icon};
+    stroke: ${({ theme, color }) => (color ? theme.colors[color] : theme.colors.icon)};
   }
 `
 
@@ -192,13 +190,7 @@ export type Props = {
  * The `Icon` renders an icon, it can be one already defined specified by
  * the type props or custom one using the customUrl.
  */
-export const Icon = ({
-  type,
-  size,
-  color,
-  tooltip,
-  className,
-}: Props): React.ReactElement => {
+export const Icon = ({ type, size, color, tooltip, className }: Props): React.ReactElement => {
   const IconElement = (
     <StyledIcon color={color} className={className}>
       {icons[type][size]}

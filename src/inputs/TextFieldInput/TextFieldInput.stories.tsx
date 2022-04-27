@@ -33,8 +33,7 @@ export const TextFieldWithErrorsInTheLabel = (): React.ReactElement => {
   const [value, setValue] = useState<string>('')
   const [hasError, setHasError] = useState<boolean>(true)
   const [hiddenLabel, setHiddenLabel] = useState<boolean>(false)
-  const [showErrorsInTheLabel, setShowErrorsInTheLabel] =
-    useState<boolean>(false)
+  const [showErrorsInTheLabel, setShowErrorsInTheLabel] = useState<boolean>(false)
 
   const error = 'This field has an error'
 
@@ -48,10 +47,7 @@ export const TextFieldWithErrorsInTheLabel = (): React.ReactElement => {
         <Switch checked={hiddenLabel} onChange={setHiddenLabel} /> Hide Label
       </Typography>
       <Typography>
-        <Switch
-          checked={showErrorsInTheLabel}
-          onChange={setShowErrorsInTheLabel}
-        />
+        <Switch checked={showErrorsInTheLabel} onChange={setShowErrorsInTheLabel} />
         Show Errors in The Label
       </Typography>
       <TextFieldInput

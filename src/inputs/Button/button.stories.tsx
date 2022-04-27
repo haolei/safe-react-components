@@ -105,11 +105,7 @@ export const withIcon = (): React.ReactElement => (
     <Button size="lg" iconType="addressBook" variant="outlined">
       Text
     </Button>
-    <Button
-      size="lg"
-      iconType="addressBook"
-      color="secondary"
-      variant="outlined">
+    <Button size="lg" iconType="addressBook" color="secondary" variant="outlined">
       Text
     </Button>
     <Button size="lg" iconType="addressBook" color="error" variant="outlined">
@@ -119,11 +115,7 @@ export const withIcon = (): React.ReactElement => (
     <Button size="lg" iconType="addressBook" variant="bordered">
       Text
     </Button>
-    <Button
-      size="lg"
-      iconType="addressBook"
-      color="secondary"
-      variant="bordered">
+    <Button size="lg" iconType="addressBook" color="secondary" variant="bordered">
       Text
     </Button>
     <Button size="lg" iconType="addressBook" color="error" variant="bordered">
@@ -134,19 +126,10 @@ export const withIcon = (): React.ReactElement => (
 
 export const withIconSize = (): React.ReactElement => (
   <ButtonContainer>
-    <Button
-      variant="bordered"
-      size="md"
-      iconType="addressBook"
-      color="secondary">
+    <Button variant="bordered" size="md" iconType="addressBook" color="secondary">
       Text
     </Button>
-    <Button
-      variant="bordered"
-      iconType="addressBook"
-      iconSize="sm"
-      size="lg"
-      color="secondary">
+    <Button variant="bordered" iconType="addressBook" iconSize="sm" size="lg" color="secondary">
       Text
     </Button>
   </ButtonContainer>
@@ -154,10 +137,7 @@ export const withIconSize = (): React.ReactElement => (
 
 export const withCustomComponent = (): React.ReactElement => {
   /* eslint-disable react/display-name */
-  const Link = React.forwardRef<
-    HTMLAnchorElement,
-    { children: React.ReactNode }
-  >((props, ref) => {
+  const Link = React.forwardRef<HTMLAnchorElement, { children: React.ReactNode }>((props, ref) => {
     return (
       <a {...props} ref={ref}>
         {props.children}

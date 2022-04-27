@@ -1,11 +1,4 @@
-import React, {
-  ReactElement,
-  useState,
-  ChangeEvent,
-  useEffect,
-  useCallback,
-  useRef,
-} from 'react'
+import React, { ReactElement, useState, ChangeEvent, useEffect, useCallback, useRef } from 'react'
 import InputAdornment from '@material-ui/core/InputAdornment'
 import CircularProgress from '@material-ui/core/CircularProgress'
 
@@ -60,11 +53,7 @@ function AddressInput({
     (value = '') => {
       if (inputRef.current) {
         const checksumAddress = checksumValidAddress(value)
-        inputRef.current.value = addPrefix(
-          checksumAddress,
-          networkPrefix,
-          showNetworkPrefix
-        )
+        inputRef.current.value = addPrefix(checksumAddress, networkPrefix, showNetworkPrefix)
       }
     },
     [networkPrefix, showNetworkPrefix]
@@ -93,12 +82,7 @@ function AddressInput({
     if (getAddressFromDomain) {
       throttle(resolveDomainName, customENSThrottleDelay)
     }
-  }, [
-    getAddressFromDomain,
-    resolveDomainName,
-    customENSThrottleDelay,
-    throttle,
-  ])
+  }, [getAddressFromDomain, resolveDomainName, customENSThrottleDelay, throttle])
 
   // if address changes from outside (Like Loaded from a QR code) we update the input value
   useEffect(() => {
@@ -128,9 +112,7 @@ function AddressInput({
 
       // if the valid network prefix is present, we remove it from the address state
       const isValidPrefix = networkPrefix === inputPrefix
-      const checksumAddress = checksumValidAddress(
-        isValidPrefix ? inputWithoutPrefix : inputValue
-      )
+      const checksumAddress = checksumValidAddress(isValidPrefix ? inputWithoutPrefix : inputValue)
 
       onChangeAddress(checksumAddress)
     },
@@ -164,11 +146,7 @@ function AddressInput({
       InputProps={{
         ...InputProps,
         // if isLoading we show a custom loader adornment
-        endAdornment: isLoading ? (
-          <LoaderSpinnerAdornment />
-        ) : (
-          InputProps?.endAdornment
-        ),
+        endAdornment: isLoading ? <LoaderSpinnerAdornment /> : InputProps?.endAdornment,
       }}
       inputProps={{
         ...inputProps,

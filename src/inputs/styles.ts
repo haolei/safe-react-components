@@ -61,8 +61,7 @@ export const inputStyles = css<TextFieldProps>`
       ${({ hiddenLabel }) => (hiddenLabel ? 'top: 0' : '')};
       transition: border-color 0.2s ease-in-out;
       border: 1px solid
-        ${({ theme, value }) =>
-          value ? theme.colors.inputFilled : theme.colors.inputDisabled};
+        ${({ theme, value }) => (value ? theme.colors.inputFilled : theme.colors.inputDisabled)};
       border-radius: 6px;
       legend {
         display: ${({ hiddenLabel }) => (hiddenLabel ? 'none' : 'block')};
@@ -94,8 +93,7 @@ export const inputStyles = css<TextFieldProps>`
   .MuiFormLabel-filled
     + .MuiOutlinedInput-root:not(:hover):not(.Mui-disabled)
     .MuiOutlinedInput-notchedOutline {
-    border-color: ${({ theme, error }) =>
-      error ? theme.colors.error : theme.colors.inputFilled};
+    border-color: ${({ theme, error }) => (error ? theme.colors.error : theme.colors.inputFilled)};
   }
 `
 

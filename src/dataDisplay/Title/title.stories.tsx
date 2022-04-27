@@ -10,9 +10,7 @@ export default {
   },
 }
 
-export const SimpleTitle = (): React.ReactElement => (
-  <Title size="lg">Title LG</Title>
-)
+export const SimpleTitle = (): React.ReactElement => <Title size="lg">Title LG</Title>
 
 export const WithSizes = (): React.ReactElement => {
   return (

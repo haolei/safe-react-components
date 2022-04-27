@@ -6,8 +6,7 @@ export default {
   title: 'Data Display/Data Table',
   component: DataTable,
   parameters: {
-    componentSubtitle:
-      'Advanced tables. Wrapper around Material UI x-data-grid',
+    componentSubtitle: 'Advanced tables. Wrapper around Material UI x-data-grid',
     docs: {
       description: {
         component:

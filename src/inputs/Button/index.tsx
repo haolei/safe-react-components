@@ -1,30 +1,16 @@
 import React, { ReactElement, ReactNode, HTMLAttributes } from 'react'
-import ButtonMUI, {
-  ButtonProps as ButtonMUIProps,
-} from '@material-ui/core/Button'
+import ButtonMUI, { ButtonProps as ButtonMUIProps } from '@material-ui/core/Button'
 import { alpha } from '@material-ui/core/styles'
 
-import styled, {
-  css,
-  DefaultTheme,
-  FlattenInterpolation,
-  ThemeProps,
-} from 'styled-components'
+import styled, { css, DefaultTheme, FlattenInterpolation, ThemeProps } from 'styled-components'
 
-import theme, {
-  ThemeButtonSize,
-  ThemeIconSize,
-  ThemeTextSize,
-} from '../../theme'
+import theme, { ThemeButtonSize, ThemeIconSize, ThemeTextSize } from '../../theme'
 import { Icon, IconType, Props as IconProps } from '../../dataDisplay'
 
 type Colors = 'primary' | 'secondary' | 'error'
 type Variations = 'bordered' | 'contained' | 'outlined'
 
-type CustomButtonMuiProps = Omit<
-  ButtonMUIProps,
-  'size' | 'color' | 'variant'
-> & {
+type CustomButtonMuiProps = Omit<ButtonMUIProps, 'size' | 'color' | 'variant'> & {
   to?: string
   component?: ReactNode
 }
@@ -38,9 +24,7 @@ type LocalProps = {
   iconSize?: ThemeIconSize
 }
 
-type Props = LocalProps &
-  CustomButtonMuiProps &
-  HTMLAttributes<HTMLButtonElement>
+type Props = LocalProps & CustomButtonMuiProps & HTMLAttributes<HTMLButtonElement>
 
 const StyledIcon = styled(Icon)<IconProps>`
   margin-right: 5px;
@@ -215,13 +199,10 @@ const customStyles: {
 
 const StyledButton = styled(ButtonMUI)<{ $localProps: LocalProps }>`
   && {
-    height: ${({ theme, $localProps }) =>
-      theme.buttons.size[$localProps.size].height};
+    height: ${({ theme, $localProps }) => theme.buttons.size[$localProps.size].height};
     &.MuiButton-root {
-      min-width: ${({ theme, $localProps: { size } }) =>
-        theme.buttons.size[size].minWidth};
-      padding: ${({ theme, $localProps: { size } }) =>
-        theme.buttons.size[size].padding};
+      min-width: ${({ theme, $localProps: { size } }) => theme.buttons.size[size].minWidth};
+      padding: ${({ theme, $localProps: { size } }) => theme.buttons.size[size].padding};
       font-family: ${theme.fonts.fontFamily};
       font-size: ${({ theme, $localProps }) =>
         theme.text.size[$localProps.textSize ?? 'xl'].fontSize};
@@ -245,10 +226,7 @@ const StyledButton = styled(ButtonMUI)<{ $localProps: LocalProps }>`
     }
 
     ${({ $localProps }) => {
-      if (
-        $localProps.color !== undefined &&
-        $localProps.variant !== undefined
-      ) {
+      if ($localProps.color !== undefined && $localProps.variant !== undefined) {
         return customStyles[$localProps.color][$localProps.variant]
       }
     }}

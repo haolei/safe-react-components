@@ -15,49 +15,34 @@ export const SimpleAccordion = (): React.ReactElement => (
   <Card>
     <Accordion>
       <AccordionSummary>
-        <IconText
-          iconSize="sm"
-          textSize="xl"
-          iconType="code"
-          text="Transaction 1"
-        />
+        <IconText iconSize="sm" textSize="xl" iconType="code" text="Transaction 1" />
       </AccordionSummary>
       <AccordionDetails>
         <Text size="lg">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-          malesuada lacus ex, sit amet blandit leo lobortis eget.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
+          sit amet blandit leo lobortis eget.
         </Text>
       </AccordionDetails>
     </Accordion>
     <Accordion>
       <AccordionSummary>
-        <IconText
-          iconSize="sm"
-          textSize="xl"
-          iconType="code"
-          text="Transaction 2"
-        />
+        <IconText iconSize="sm" textSize="xl" iconType="code" text="Transaction 2" />
       </AccordionSummary>
       <AccordionDetails>
         <Text size="lg">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-          malesuada lacus ex, sit amet blandit leo lobortis eget.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
+          sit amet blandit leo lobortis eget.
         </Text>
       </AccordionDetails>
     </Accordion>
     <Accordion>
       <AccordionSummary>
-        <IconText
-          iconSize="sm"
-          textSize="xl"
-          iconType="code"
-          text="Transaction 3"
-        />
+        <IconText iconSize="sm" textSize="xl" iconType="code" text="Transaction 3" />
       </AccordionSummary>
       <AccordionDetails>
         <Text size="lg">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-          malesuada lacus ex, sit amet blandit leo lobortis eget.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
+          sit amet blandit leo lobortis eget.
         </Text>
       </AccordionDetails>
     </Accordion>
@@ -75,49 +60,34 @@ export const CompactAccordion = (): React.ReactElement => (
     }}>
     <Accordion compact>
       <AccordionSummary>
-        <IconText
-          iconSize="sm"
-          textSize="xl"
-          iconType="code"
-          text="Transaction 1"
-        />
+        <IconText iconSize="sm" textSize="xl" iconType="code" text="Transaction 1" />
       </AccordionSummary>
       <AccordionDetails>
         <Text size="lg">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-          malesuada lacus ex, sit amet blandit leo lobortis eget.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
+          sit amet blandit leo lobortis eget.
         </Text>
       </AccordionDetails>
     </Accordion>
     <Accordion compact>
       <AccordionSummary>
-        <IconText
-          iconSize="sm"
-          textSize="xl"
-          iconType="code"
-          text="Transaction 2"
-        />
+        <IconText iconSize="sm" textSize="xl" iconType="code" text="Transaction 2" />
       </AccordionSummary>
       <AccordionDetails>
         <Text size="lg">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-          malesuada lacus ex, sit amet blandit leo lobortis eget.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
+          sit amet blandit leo lobortis eget.
         </Text>
       </AccordionDetails>
     </Accordion>
     <Accordion compact>
       <AccordionSummary>
-        <IconText
-          iconSize="sm"
-          textSize="xl"
-          iconType="code"
-          text="Transaction 3"
-        />
+        <IconText iconSize="sm" textSize="xl" iconType="code" text="Transaction 3" />
       </AccordionSummary>
       <AccordionDetails>
         <Text size="lg">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-          malesuada lacus ex, sit amet blandit leo lobortis eget.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
+          sit amet blandit leo lobortis eget.
         </Text>
       </AccordionDetails>
     </Accordion>

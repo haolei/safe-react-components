@@ -6,9 +6,7 @@ describe('formatAmount', () => {
   const numberFormatSpy = jest.spyOn(Intl, 'NumberFormat')
 
   const setLocale = (locale: string) =>
-    numberFormatSpy.mockImplementation(
-      (_, options) => new NumberFormat(locale, options)
-    )
+    numberFormatSpy.mockImplementation((_, options) => new NumberFormat(locale, options))
 
   beforeEach(() => {
     // Prevent tests failing on non-English environments
@@ -118,18 +116,10 @@ describe('formatAmount', () => {
     expect(formatAmount('-10000000', options)).toBe('-10,000,000')
     expect(formatAmount(-10000000, options)).toBe('-10,000,000')
 
-    expect(formatAmount('88888888888888888888888888888888888', options)).toBe(
-      '> +999T'
-    )
-    expect(formatAmount(88888888888888888888888888888888888, options)).toBe(
-      '> +999T'
-    )
-    expect(formatAmount('-88888888888888888888888888888888888', options)).toBe(
-      '< -999T'
-    )
-    expect(formatAmount(-88888888888888888888888888888888888, options)).toBe(
-      '< -999T'
-    )
+    expect(formatAmount('88888888888888888888888888888888888', options)).toBe('> +999T')
+    expect(formatAmount(88888888888888888888888888888888888, options)).toBe('> +999T')
+    expect(formatAmount('-88888888888888888888888888888888888', options)).toBe('< -999T')
+    expect(formatAmount(-88888888888888888888888888888888888, options)).toBe('< -999T')
 
     /**
      * When there is a +/- prefix to the amount (e.g. +0.00001 or -0.00001)

@@ -12,10 +12,7 @@ export interface Props {
   label: React.ReactNode
   checked: boolean
   name: string
-  onChange: (
-    event: React.ChangeEvent<HTMLInputElement>,
-    checked: boolean
-  ) => void
+  onChange: (event: React.ChangeEvent<HTMLInputElement>, checked: boolean) => void
   meta?: any
   input?: any // added for compatibility with react-final-form
 }
@@ -48,9 +45,7 @@ const Checkbox = ({
 }: Props): React.ReactElement => {
   const getCheckboxForReactFinalForm = () => {
     const { name, value, ...inputRest } = input
-    return (
-      <CustomCheckbox {...rest} name={name} checked={!!value} {...inputRest} />
-    )
+    return <CustomCheckbox {...rest} name={name} checked={!!value} {...inputRest} />
   }
 
   return (

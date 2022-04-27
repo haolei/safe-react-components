@@ -7,8 +7,7 @@ export default {
   title: 'Data Display/Table',
   component: Table,
   parameters: {
-    componentSubtitle:
-      'Used for tabular information. It allows sorting by a single column.',
+    componentSubtitle: 'Used for tabular information. It allows sorting by a single column.',
   },
 }
 
@@ -68,19 +67,13 @@ const rows = [
   },
 ]
 
-export const SimpleTable = (): React.ReactElement => (
-  <Table headers={headerCells} rows={rows} />
-)
+export const SimpleTable = (): React.ReactElement => <Table headers={headerCells} rows={rows} />
 
 export const WithoutHeader = (): React.ReactElement => <Table rows={rows} />
 
 export const Sortable = (): React.ReactElement => {
-  const [sortedByHeaderId, setSortedByHeaderId] = useState<string | undefined>(
-    'col2'
-  )
-  const [sortDirection, setSortDirection] = useState<TableSortDirection>(
-    TableSortDirection.asc
-  )
+  const [sortedByHeaderId, setSortedByHeaderId] = useState<string | undefined>('col2')
+  const [sortDirection, setSortDirection] = useState<TableSortDirection>(TableSortDirection.asc)
 
   const onHeaderClick = (headerId: string) => {
     if (!['col2'].includes(headerId)) {
@@ -142,31 +135,22 @@ export const Collapsible = (): React.ReactElement => {
 }
 
 export const FixedHeader = (): React.ReactElement => {
-  const manyRows: TableRow[] = Array.from(new Array<string>(100).keys()).map(
-    (val, idx) => ({
-      id: idx.toString(),
-      collapsibleContent: <div>content {idx}</div>,
-      cells: [
-        {
-          content: <Icon type="addressBook" size="sm" />,
-        },
-        {
-          content: idx.toString(),
-          alignment: TableAlignment.right,
-        },
-        {
-          content: `Row #${idx}`,
-          alignment: TableAlignment.right,
-        },
-      ],
-    })
-  )
-  return (
-    <Table
-      isStickyHeader={true}
-      maxHeight={300}
-      headers={headerCells}
-      rows={manyRows}
-    />
-  )
+  const manyRows: TableRow[] = Array.from(new Array<string>(100).keys()).map((val, idx) => ({
+    id: idx.toString(),
+    collapsibleContent: <div>content {idx}</div>,
+    cells: [
+      {
+        content: <Icon type="addressBook" size="sm" />,
+      },
+      {
+        content: idx.toString(),
+        alignment: TableAlignment.right,
+      },
+      {
+        content: `Row #${idx}`,
+        alignment: TableAlignment.right,
+      },
+    ],
+  }))
+  return <Table isStickyHeader={true} maxHeight={300} headers={headerCells} rows={manyRows} />
 }

@@ -84,9 +84,7 @@ const EllipsisMenu = ({ menuItems }: Props): React.ReactElement => {
           open={Boolean(anchorEl)}>
           {menuItems.map(item => (
             <MenuItemWrapper key={item.label}>
-              <MenuItem
-                disabled={item.disabled}
-                onClick={() => onMenuItemClick(item)}>
+              <MenuItem disabled={item.disabled} onClick={() => onMenuItemClick(item)}>
                 {item.label}
               </MenuItem>
             </MenuItemWrapper>

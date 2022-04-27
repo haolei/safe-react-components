@@ -80,17 +80,13 @@ export const SimpleAddressInput = ({
     ? 'The chain prefix must match the current network'
     : ''
 
-  const error =
-    address && showErrors ? inValidNetworkError || inValidAddressError : ''
+  const error = address && showErrors ? inValidNetworkError || inValidAddressError : ''
 
   // fake ENS Resolution
   const getAddressFromDomain = useCallback(
     () =>
       new Promise<string>(resolve => {
-        setTimeout(
-          () => resolve('0x83eC7B0506556a7749306D69681aDbDbd08f0769'),
-          2000
-        )
+        setTimeout(() => resolve('0x83eC7B0506556a7749306D69681aDbDbd08f0769'), 2000)
       }),
     []
   )
@@ -166,9 +162,7 @@ export const AddressInputWithENSResolution = (): React.ReactElement => {
   const [showError, setShowError] = useState<boolean>(false)
   const [error, setError] = useState<string>('')
 
-  const [customENSThrottleDelay, setCustomENSThrottleDelay] = useState<
-    number | undefined
-  >(2000)
+  const [customENSThrottleDelay, setCustomENSThrottleDelay] = useState<number | undefined>(2000)
 
   // Fake ENS Resolution
   const getAddressFromDomain = useCallback(
@@ -235,14 +229,11 @@ export const AddressInputWithENSResolution = (): React.ReactElement => {
           label={'custom Delay (in milliseconds)'}
           placeholder={'Customize your throttle delay for ENS resolution!'}
           helperText={
-            !!customENSThrottleDelay &&
-            'Customize your throttle delay for ENS resolution!'
+            !!customENSThrottleDelay && 'Customize your throttle delay for ENS resolution!'
           }
           value={customENSThrottleDelay}
           type="number"
-          onChange={e =>
-            setCustomENSThrottleDelay(e.target.value && Number(e.target.value))
-          }
+          onChange={e => setCustomENSThrottleDelay(e.target.value && Number(e.target.value))}
         />
       </div>
       {/* Address In the State */}
@@ -263,8 +254,7 @@ export const SafeAddressInputValidation = (): React.ReactElement => {
     setIsValidSafeAddress(false)
 
     const timeId = setTimeout(() => {
-      const isValidSafeAddress =
-        address === '0x83eC7B0506556a7749306D69681aDbDbd08f0769'
+      const isValidSafeAddress = address === '0x83eC7B0506556a7749306D69681aDbDbd08f0769'
       setIsValidSafeAddress(isValidSafeAddress)
       setShowLoadingSpinner(false)
     }, 1500)
@@ -315,39 +305,36 @@ export const SafeAddressInputValidation = (): React.ReactElement => {
   )
 }
 
-export const AddressInputWithSimpleAddressValidation =
-  (): React.ReactElement => {
-    const [address, setAddress] = useState<string>('0x123...')
-    const [hasError, setHasError] = useState<boolean>()
+export const AddressInputWithSimpleAddressValidation = (): React.ReactElement => {
+  const [address, setAddress] = useState<string>('0x123...')
+  const [hasError, setHasError] = useState<boolean>()
 
-    useEffect(() => {
-      setHasError(address && !isValidAddress(address))
-    }, [address])
+  useEffect(() => {
+    setHasError(address && !isValidAddress(address))
+  }, [address])
 
-    const error = 'Invalid Address'
+  const error = 'Invalid Address'
 
-    return (
-      <form noValidate autoComplete="off" onSubmit={onSubmit}>
-        <AddressInput
-          label="Address"
-          name="address"
-          placeholder={'Ethereum address'}
-          networkPrefix="rin"
-          error={hasError ? error : ''}
-          address={address}
-          onChangeAddress={setAddress}
-        />
-        {/* Address In the State */}
-        <StyledText>Address In the State:</StyledText>
-        <CodeFormat>{address || ' '}</CodeFormat>
-      </form>
-    )
-  }
+  return (
+    <form noValidate autoComplete="off" onSubmit={onSubmit}>
+      <AddressInput
+        label="Address"
+        name="address"
+        placeholder={'Ethereum address'}
+        networkPrefix="rin"
+        error={hasError ? error : ''}
+        address={address}
+        onChangeAddress={setAddress}
+      />
+      {/* Address In the State */}
+      <StyledText>Address In the State:</StyledText>
+      <CodeFormat>{address || ' '}</CodeFormat>
+    </form>
+  )
+}
 
 export const AddressInputWithoutPrefix = (): React.ReactElement => {
-  const [address, setAddress] = useState<string>(
-    '0x83eC7B0506556a7749306D69681aDbDbd08f0769'
-  )
+  const [address, setAddress] = useState<string>('0x83eC7B0506556a7749306D69681aDbDbd08f0769')
 
   return (
     <form noValidate autoComplete="off" onSubmit={onSubmit}>
@@ -366,9 +353,7 @@ export const AddressInputWithoutPrefix = (): React.ReactElement => {
 }
 
 export const AddressInputLoading = (): React.ReactElement => {
-  const [address, setAddress] = useState<string>(
-    '0x83eC7B0506556a7749306D69681aDbDbd08f0769'
-  )
+  const [address, setAddress] = useState<string>('0x83eC7B0506556a7749306D69681aDbDbd08f0769')
 
   return (
     <form noValidate autoComplete="off" onSubmit={onSubmit}>
@@ -387,9 +372,7 @@ export const AddressInputLoading = (): React.ReactElement => {
 }
 
 export const AddressInputWithAdornment = (): React.ReactElement => {
-  const [address, setAddress] = useState<string>(
-    '0x83eC7B0506556a7749306D69681aDbDbd08f0769'
-  )
+  const [address, setAddress] = useState<string>('0x83eC7B0506556a7749306D69681aDbDbd08f0769')
 
   return (
     <form noValidate autoComplete="off" onSubmit={onSubmit}>
@@ -415,9 +398,7 @@ export const AddressInputWithAdornment = (): React.ReactElement => {
 }
 
 export const AddressInputDisabled = (): React.ReactElement => {
-  const [address, setAddress] = useState<string>(
-    '0x83eC7B0506556a7749306D69681aDbDbd08f0769'
-  )
+  const [address, setAddress] = useState<string>('0x83eC7B0506556a7749306D69681aDbDbd08f0769')
 
   return (
     <form noValidate autoComplete="off" onSubmit={onSubmit}>
@@ -437,9 +418,7 @@ export const AddressInputDisabled = (): React.ReactElement => {
 }
 
 export const AddressInputWithErrors = (): React.ReactElement => {
-  const [address, setAddress] = useState<string>(
-    '0x83eC7B0506556a7749306D69681aDbDbd08f0769'
-  )
+  const [address, setAddress] = useState<string>('0x83eC7B0506556a7749306D69681aDbDbd08f0769')
 
   return (
     <form noValidate autoComplete="off" onSubmit={onSubmit}>
@@ -493,9 +472,7 @@ function LoaderIndicator({ completeValue, address, showError }) {
   React.useEffect(() => {
     const timer = setInterval(() => {
       setProgress(prevProgress =>
-        prevProgress >= 100
-          ? prevProgress
-          : prevProgress + 100 / (completeValue / 200)
+        prevProgress >= 100 ? prevProgress : prevProgress + 100 / (completeValue / 200)
       )
     }, 200)
 
@@ -505,8 +482,7 @@ function LoaderIndicator({ completeValue, address, showError }) {
   }, [completeValue, address])
 
   useEffect(() => {
-    const hasToRestProgress =
-      address !== '0x83eC7B0506556a7749306D69681aDbDbd08f0769'
+    const hasToRestProgress = address !== '0x83eC7B0506556a7749306D69681aDbDbd08f0769'
     if (hasToRestProgress) {
       setProgress(0)
     }
@@ -514,8 +490,7 @@ function LoaderIndicator({ completeValue, address, showError }) {
 
   const isComplete = progress >= 100
 
-  const alreadyResolved =
-    address === '0x83eC7B0506556a7749306D69681aDbDbd08f0769'
+  const alreadyResolved = address === '0x83eC7B0506556a7749306D69681aDbDbd08f0769'
 
   if (alreadyResolved || !isValidEnsName(address) || isComplete) {
     return null

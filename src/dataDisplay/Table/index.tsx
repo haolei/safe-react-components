@@ -66,10 +66,7 @@ type Props = {
   maxHeight?: number
 }
 
-const getHeaders = (
-  headers: TableHeader[],
-  isCollapsible: boolean
-): TableHeader[] => {
+const getHeaders = (headers: TableHeader[], isCollapsible: boolean): TableHeader[] => {
   if (!isCollapsible) {
     return headers
   }
@@ -96,11 +93,7 @@ const getRowCells = (
     ...cells,
     {
       alignment: TableAlignment.center,
-      content: isSelected ? (
-        <FixedIcon type="chevronUp" />
-      ) : (
-        <FixedIcon type="chevronDown" />
-      ),
+      content: isSelected ? <FixedIcon type="chevronUp" /> : <FixedIcon type="chevronDown" />,
     },
   ]
 }
@@ -128,9 +121,7 @@ export const Table = ({
         <TableHead>
           <TableRow>
             {getHeaders(headers || [], isCollapsible).map(header => (
-              <TableCell
-                key={header.id}
-                align={header.alignment || TableAlignment.left}>
+              <TableCell key={header.id} align={header.alignment || TableAlignment.left}>
                 {onHeaderClick ? (
                   <TableSortLabel
                     active={sortedByHeaderId === header.id}
@@ -151,11 +142,7 @@ export const Table = ({
       {/* TABLE BODY */}
       <TableBody>
         {rows.map(row => {
-          const rowCells = getRowCells(
-            row.cells,
-            selectedRowIds.has(row.id),
-            isCollapsible
-          )
+          const rowCells = getRowCells(row.cells, selectedRowIds.has(row.id), isCollapsible)
 
           return (
             <React.Fragment key={row.id}>
@@ -175,13 +162,8 @@ export const Table = ({
               {/* Collapsible content */}
               {isCollapsible && (
                 <TableRow>
-                  <TableCell
-                    colSpan={rowCells.length}
-                    style={{ paddingBottom: 0, paddingTop: 0 }}>
-                    <Collapse
-                      in={selectedRowIds.has(row.id)}
-                      timeout="auto"
-                      unmountOnExit>
+                  <TableCell colSpan={rowCells.length} style={{ paddingBottom: 0, paddingTop: 0 }}>
+                    <Collapse in={selectedRowIds.has(row.id)} timeout="auto" unmountOnExit>
                       <Box margin={1}>{row.collapsibleContent}</Box>
                     </Collapse>
                   </TableCell>

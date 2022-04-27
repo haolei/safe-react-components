@@ -19,12 +19,7 @@ export const SimpleCard = (): React.ReactElement => (
       </Text>
     </Dot>
     <Title size="xs">Some text</Title>
-    <Button
-      size="lg"
-      iconType="safe"
-      color="secondary"
-      variant="bordered"
-      iconSize="sm">
+    <Button size="lg" iconType="safe" color="secondary" variant="bordered" iconSize="sm">
       <Text size="xl" color="secondary">
         Load Safe
       </Text>
@@ -40,12 +35,7 @@ export const CardDisabled = (): React.ReactElement => (
       </Text>
     </Dot>
     <Title size="xs">Some text</Title>
-    <Button
-      size="lg"
-      iconType="safe"
-      color="secondary"
-      variant="bordered"
-      iconSize="sm">
+    <Button size="lg" iconType="safe" color="secondary" variant="bordered" iconSize="sm">
       <Text size="xl" color="secondary">
         Load Safe
       </Text>

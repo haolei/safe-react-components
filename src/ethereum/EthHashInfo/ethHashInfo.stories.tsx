@@ -21,9 +21,7 @@ export const WithShortAddress = (): React.ReactElement => (
   <EthHashInfo hash={hash} shortenHash={4} />
 )
 
-export const WithName = (): React.ReactElement => (
-  <EthHashInfo hash={hash} name="Owner 1" />
-)
+export const WithName = (): React.ReactElement => <EthHashInfo hash={hash} name="Owner 1" />
 
 export const WithDefaultAvatar = (): React.ReactElement => (
   <EthHashInfo hash={hash} showAvatar shortenHash={4} />
@@ -49,12 +47,7 @@ export const WithCustomAvatarFallback = (): React.ReactElement => (
 )
 
 export const WithCustomAvatarFallbackIdenticon = (): React.ReactElement => (
-  <EthHashInfo
-    hash={hash}
-    showAvatar
-    customAvatar="https://no-file.png"
-    shortenHash={4}
-  />
+  <EthHashInfo hash={hash} showAvatar customAvatar="https://no-file.png" shortenHash={4} />
 )
 
 export const WithButtons = (): React.ReactElement => (

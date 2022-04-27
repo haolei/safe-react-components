@@ -18,8 +18,7 @@ type Props = {
 
 const StyledText = styled.p<Props>`
   font-family: ${({ theme }) => theme.fonts.fontFamily};
-  color: ${({ color, theme }) =>
-    color ? theme.colors[color] : theme.colors.text};
+  color: ${({ color, theme }) => (color ? theme.colors[color] : theme.colors.text)};
   margin: 0;
   font-weight: ${({ strong }) => (strong ? 'bold' : 'normal')};
   font-size: ${({ size, theme }) => theme.text.size[size].fontSize};
@@ -39,12 +38,7 @@ const StyledTooltip = withStyles(() => ({
   },
 }))(Tooltip)
 
-const Text = ({
-  children,
-  as,
-  tooltip,
-  ...rest
-}: Props): React.ReactElement => {
+const Text = ({ children, as, tooltip, ...rest }: Props): React.ReactElement => {
   const TextElement = (
     <StyledText as={as} {...rest}>
       {children}

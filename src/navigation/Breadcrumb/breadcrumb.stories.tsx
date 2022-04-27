@@ -39,17 +39,7 @@ export const SubSection = (): React.ReactElement => (
 export const FullOptions = (): React.ReactElement => (
   <Breadcrumb>
     <BreadcrumbElement text="First level" iconType="addressBook" counter="8" />
-    <BreadcrumbElement
-      text="Second level"
-      iconType="addressBook"
-      counter="8"
-      color="placeHolder"
-    />
-    <BreadcrumbElement
-      text="Third level"
-      iconType="addressBook"
-      counter="8"
-      color="placeHolder"
-    />
+    <BreadcrumbElement text="Second level" iconType="addressBook" counter="8" color="placeHolder" />
+    <BreadcrumbElement text="Third level" iconType="addressBook" counter="8" color="placeHolder" />
   </Breadcrumb>
 )

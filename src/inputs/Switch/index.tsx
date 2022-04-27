@@ -7,8 +7,7 @@ const StyledSwitch = styled(({ ...rest }) => <SwitchMui {...rest} />)`
   && {
     .MuiIconButton-label,
     .MuiSwitch-colorSecondary.Mui-checked {
-      color: ${({ checked, theme }) =>
-        checked ? theme.colors.primary : theme.colors.icon};
+      color: ${({ checked, theme }) => (checked ? theme.colors.primary : theme.colors.icon)};
     }
 
     .MuiSwitch-colorSecondary.Mui-checked:hover {

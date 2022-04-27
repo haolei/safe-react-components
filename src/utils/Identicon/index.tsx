@@ -15,11 +15,7 @@ const StyledImg = styled.img<{ size: ThemeIdenticonSize }>`
   border-radius: 50%;
 `
 
-const Identicon = ({
-  size = 'md',
-  address,
-  ...rest
-}: Props): React.ReactElement => {
+const Identicon = ({ size = 'md', address, ...rest }: Props): React.ReactElement => {
   const iconSrc = React.useMemo(() => makeBlockie(address), [address])
 
   return <StyledImg src={iconSrc} size={size} {...rest} />

@@ -31,11 +31,7 @@ export const formatAmount = (
       throw new Error('The provided amount is not a number.')
     }
 
-    const formatNumber = (
-      number: number,
-      format: IntlFormatNumberOptions,
-      prefix = ''
-    ) => {
+    const formatNumber = (number: number, format: IntlFormatNumberOptions, prefix = '') => {
       const isNegative = Math.sign(number) === -1
 
       // Add space after prefix (if displaying sign)
@@ -58,10 +54,8 @@ export const formatAmount = (
 
     const isPositive = Math.sign(number) === 1
 
-    const isSmallNumber =
-      number < SMALLEST_NUMBER_SHOWN && number > -SMALLEST_NUMBER_SHOWN // <0.00001
-    const isMaxNumber =
-      (number >= MAX_NUMBER || number <= -MAX_NUMBER) && !isSmallNumber // >999T
+    const isSmallNumber = number < SMALLEST_NUMBER_SHOWN && number > -SMALLEST_NUMBER_SHOWN // <0.00001
+    const isMaxNumber = (number >= MAX_NUMBER || number <= -MAX_NUMBER) && !isSmallNumber // >999T
 
     if (isSmallNumber) {
       // <0.00001
@@ -113,11 +107,7 @@ type Props = {
   value: string
 } & FormatOptions
 
-const Amount = ({
-  value,
-  currency,
-  showSign = DEFAULT_SHOW_SIGN,
-}: Props): React.ReactElement => (
+const Amount = ({ value, currency, showSign = DEFAULT_SHOW_SIGN }: Props): React.ReactElement => (
   <>{formatAmount(value, { currency, showSign })}</>
 )
 

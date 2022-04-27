@@ -1,7 +1,5 @@
 import React, { ReactElement } from 'react'
-import AccordionMUI, {
-  AccordionProps as AccordionMUIProps,
-} from '@material-ui/core/Accordion'
+import AccordionMUI, { AccordionProps as AccordionMUIProps } from '@material-ui/core/Accordion'
 import AccordionSummaryMUI, {
   AccordionSummaryProps as AccordionSummaryMUIProps,
 } from '@material-ui/core/AccordionSummary'
@@ -20,8 +18,7 @@ type StyledAccordionProps = AccordionMUIProps & {
 const StyledAccordion = styled(AccordionMUI)<StyledAccordionProps>`
   &.MuiAccordion-root {
     border-radius: ${({ $compact }) => ($compact ? '8px' : '0')};
-    border: ${({ $compact, theme }) =>
-      $compact ? '2px solid ' + theme.colors.separator : 'none'};
+    border: ${({ $compact, theme }) => ($compact ? '2px solid ' + theme.colors.separator : 'none')};
     border-bottom: 2px solid ${({ theme }) => theme.colors.separator};
     margin-bottom: ${({ $compact }) => ($compact ? '16px' : '0')};
     overflow: hidden;
@@ -68,11 +65,7 @@ const StyledAccordionSummary = styled(AccordionSummaryMUI)`
   }
 `
 
-export const Accordion = ({
-  compact,
-  children,
-  ...props
-}: AccordionProps): ReactElement => {
+export const Accordion = ({ compact, children, ...props }: AccordionProps): ReactElement => {
   return (
     <StyledAccordion square elevation={0} $compact={compact} {...props}>
       {children}
@@ -85,9 +78,7 @@ export const AccordionSummary = ({
   ...props
 }: AccordionSummaryMUIProps): ReactElement => {
   return (
-    <StyledAccordionSummary
-      expandIcon={<FixedIcon type="chevronDown" />}
-      {...props}>
+    <StyledAccordionSummary expandIcon={<FixedIcon type="chevronDown" />} {...props}>
       {children}
     </StyledAccordionSummary>
   )

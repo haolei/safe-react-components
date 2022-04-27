@@ -42,8 +42,7 @@ const BodySection = styled.div<{
 }>`
   max-height: ${({ smallHeight }) => (smallHeight ? '280px' : '460px')};
   overflow-y: auto;
-  padding: ${({ withoutBodyPadding }) =>
-    withoutBodyPadding ? '0' : '16px 24px'};
+  padding: ${({ withoutBodyPadding }) => (withoutBodyPadding ? '0' : '16px 24px')};
 `
 
 const FooterSection = styled.div`
@@ -69,13 +68,10 @@ const useStyles = makeStyles({
   },
 
   paper: {
-    position: (props: { smallHeight: boolean }) =>
-      props.smallHeight ? 'relative' : 'absolute',
-    top: (props: { smallHeight: boolean }) =>
-      props.smallHeight ? 'unset' : '121px',
+    position: (props: { smallHeight: boolean }) => (props.smallHeight ? 'relative' : 'absolute'),
+    top: (props: { smallHeight: boolean }) => (props.smallHeight ? 'unset' : '121px'),
     minWidth: '500px',
-    width: (props: { smallHeight: boolean }) =>
-      props.smallHeight ? '500px' : 'inherit',
+    width: (props: { smallHeight: boolean }) => (props.smallHeight ? '500px' : 'inherit'),
     backgroundColor: theme.colors.white,
     borderRadius: '8px',
     boxShadow: `0 0 ${theme.colors.shadow.opacity} 0 ${theme.colors.shadow.color}`,
@@ -108,9 +104,7 @@ const GenericModal = ({
           </StyledButton>
         </TitleSection>
 
-        <BodySection
-          withoutBodyPadding={withoutBodyPadding}
-          smallHeight={smallHeight}>
+        <BodySection withoutBodyPadding={withoutBodyPadding} smallHeight={smallHeight}>
           {body}
         </BodySection>
 

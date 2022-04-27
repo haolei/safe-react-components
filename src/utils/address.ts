@@ -1,9 +1,4 @@
-import {
-  checkAddressChecksum,
-  toChecksumAddress,
-  isAddress,
-  isHexStrict,
-} from 'web3-utils'
+import { checkAddressChecksum, toChecksumAddress, isAddress, isHexStrict } from 'web3-utils'
 
 const getAddressWithoutNetworkPrefix = (address = ''): string => {
   const hasPrefix = address.includes(':')
@@ -24,10 +19,7 @@ const getNetworkPrefix = (address = ''): string => {
   return hasPrefixDefined ? prefix : ''
 }
 
-const addNetworkPrefix = (
-  address: string,
-  prefix: string | undefined
-): string => {
+const addNetworkPrefix = (address: string, prefix: string | undefined): string => {
   return !!prefix ? `${prefix}:${address}` : address
 }
 

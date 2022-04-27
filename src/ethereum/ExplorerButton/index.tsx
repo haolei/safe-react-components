@@ -29,10 +29,7 @@ type Props = {
   explorerUrl: ExplorerInfo
 }
 
-const ExplorerButton = ({
-  className,
-  explorerUrl,
-}: Props): React.ReactElement => {
+const ExplorerButton = ({ className, explorerUrl }: Props): React.ReactElement => {
   const { url, alt } = explorerUrl()
   const onClick = (event: React.MouseEvent<HTMLAnchorElement>): void => {
     event.stopPropagation()

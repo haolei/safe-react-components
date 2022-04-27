@@ -29,9 +29,7 @@ export type Props = {
 
 const TabWrapper = styled.div<{ variant: Variant }>`
   box-shadow: ${({ variant, theme }) =>
-    variant === 'outlined'
-      ? 'inset 0 -2px 0' + theme.colors.overlay.color
-      : 'none'};
+    variant === 'outlined' ? 'inset 0 -2px 0' + theme.colors.overlay.color : 'none'};
 `
 
 type CustomTabsProps = TabsProps<
@@ -48,8 +46,7 @@ const CustomTabs = ({ variantStyle, ...rest }: CustomTabsProps) => {
       borderRadius: variantStyle === 'contained' ? '8px 8px 0 0' : 'inherit',
 
       '& .MuiTabs-indicator': {
-        backgroundColor:
-          variantStyle === 'outlined' ? theme.colors.primary : 'transparent',
+        backgroundColor: variantStyle === 'outlined' ? theme.colors.primary : 'transparent',
       },
       '& .MuiTab-textColorInherit.Mui-selected p': {
         color: theme.colors.primary,
@@ -76,12 +73,8 @@ const CustomTab = ({ variantStyle, ...rest }: CustomTabProps) => {
     root: {
       fontFamily: theme.fonts.fontFamily,
       letterSpacing: '1px',
-      backgroundColor:
-        variantStyle === 'contained' ? theme.colors.white : 'inherit',
-      border:
-        variantStyle === 'contained'
-          ? '1px solid' + theme.colors.separator
-          : 'inherit',
+      backgroundColor: variantStyle === 'contained' ? theme.colors.white : 'inherit',
+      border: variantStyle === 'contained' ? '1px solid' + theme.colors.separator : 'inherit',
       '& .MuiTabs-indicator': {
         backgroundColor: variantStyle === 'contained' ? 'none' : 'inherit',
       },
@@ -99,10 +92,7 @@ const Tab = ({
   variant = 'outlined',
   fullWidth,
 }: Props): JSX.Element => {
-  const handleChange = (
-    _event: React.ChangeEvent<unknown>,
-    value: string
-  ): void => {
+  const handleChange = (_event: React.ChangeEvent<unknown>, value: string): void => {
     onChange(value)
   }
 

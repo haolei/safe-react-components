@@ -24,12 +24,7 @@ const RadioButtons = ({
     onRadioChange((event.target as HTMLInputElement).value)
 
   return (
-    <RadioGroup
-      aria-label={name}
-      name={name}
-      value={value}
-      onChange={onChangeInternal}
-      {...rest}>
+    <RadioGroup aria-label={name} name={name} value={value} onChange={onChangeInternal} {...rest}>
       {options.map(o => (
         <FormControlLabel
           key={o.value}

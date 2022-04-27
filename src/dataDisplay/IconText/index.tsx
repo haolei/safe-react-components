@@ -1,12 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import {
-  ThemeColors,
-  ThemeIconSize,
-  ThemeMargin,
-  ThemeTextSize,
-} from '../../theme'
+import { ThemeColors, ThemeIconSize, ThemeMargin, ThemeTextSize } from '../../theme'
 import { Icon, IconType } from '../Icon'
 import Text from '../Text'
 

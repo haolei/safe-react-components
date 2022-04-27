@@ -46,9 +46,7 @@ function TextFieldInput({
   )
 }
 
-const TextField = styled((props: TextFieldProps) => (
-  <TextFieldMui {...props} />
-))<TextFieldProps>`
+const TextField = styled((props: TextFieldProps) => <TextFieldMui {...props} />)<TextFieldProps>`
   && {
     ${inputLabelStyles}
     ${inputStyles}

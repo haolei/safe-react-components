@@ -23,12 +23,7 @@ export const SimpleTab = (): React.ReactElement => {
 
   return (
     <>
-      <Tab
-        onChange={setSelected}
-        selectedTab={selected}
-        variant="outlined"
-        items={items}
-      />
+      <Tab onChange={setSelected} selectedTab={selected} variant="outlined" items={items} />
       {selected}
     </>
   )
@@ -39,12 +34,7 @@ export const TabContained = (): React.ReactElement => {
 
   return (
     <>
-      <Tab
-        onChange={setSelected}
-        selectedTab={selected}
-        variant="contained"
-        items={items}
-      />
+      <Tab onChange={setSelected} selectedTab={selected} variant="contained" items={items} />
       {selected}
     </>
   )

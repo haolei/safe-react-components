@@ -85,11 +85,7 @@ type Props = {
   className?: string
 }
 
-export const Breadcrumb = ({
-  children,
-  separator = '/',
-  className,
-}: Props): React.ReactElement => (
+export const Breadcrumb = ({ children, separator = '/', className }: Props): React.ReactElement => (
   <Wrapper className={className}>
     {React.Children.map(children, (child, index) => {
       return (

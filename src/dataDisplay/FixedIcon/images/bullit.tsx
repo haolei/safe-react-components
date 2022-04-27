@@ -1,11 +1,7 @@
 import React from 'react'
 
 const icon = (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="6"
-    height="6"
-    viewBox="0 0 6 6">
+  <svg xmlns="http://www.w3.org/2000/svg" width="6" height="6" viewBox="0 0 6 6">
     <path
       fill="#008C73"
       fillRule="evenodd"

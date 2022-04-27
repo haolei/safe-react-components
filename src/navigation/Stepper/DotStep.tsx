@@ -32,18 +32,10 @@ type Props = {
   currentIndex: number
   error?: boolean
 }
-const DotStep = ({
-  currentIndex,
-  dotIndex,
-  error,
-}: Props): React.ReactElement => {
+const DotStep = ({ currentIndex, dotIndex, error }: Props): React.ReactElement => {
   return (
     <Circle disabled={dotIndex > currentIndex} error={error}>
-      {dotIndex < currentIndex ? (
-        <Icon size="sm" type="check" color="white" />
-      ) : (
-        dotIndex + 1
-      )}
+      {dotIndex < currentIndex ? <Icon size="sm" type="check" color="white" /> : dotIndex + 1}
     </Circle>
   )
 }

@@ -2,14 +2,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import { Divider } from '../../../index'
 
-import {
-  GenericModal,
-  Icon,
-  Text,
-  Button,
-  Switch,
-  ModalFooterConfirmation,
-} from '../../../index'
+import { GenericModal, Icon, Text, Button, Switch, ModalFooterConfirmation } from '../../../index'
 
 const SearchInput = styled.input`
   border: none;
@@ -176,11 +169,7 @@ const ManageList = ({
               <StyledItem key={i.id}>
                 {/* Item description */}
                 <StyledImageName>
-                  <StyledImage
-                    alt={i.name}
-                    onError={setDefaultImage}
-                    src={i.iconUrl}
-                  />
+                  <StyledImage alt={i.name} onError={setDefaultImage} src={i.iconUrl} />
                   <div>
                     <div>
                       <Text size="lg" strong>
@@ -188,9 +177,7 @@ const ManageList = ({
                       </Text>
                     </div>
                     <div>
-                      <TextDesc size="md">
-                        {i.description && i.description}
-                      </TextDesc>
+                      <TextDesc size="md">{i.description && i.description}</TextDesc>
                     </div>
                   </div>
                 </StyledImageName>
@@ -202,14 +189,8 @@ const ManageList = ({
                 {showDeleteButton && (
                   <>
                     <StyledDivider orientation="vertical" />
-                    <UnstyledButton
-                      onClick={onDeleteClick}
-                      disabled={!i.isDeletable}>
-                      <Icon
-                        size="md"
-                        color={i.isDeletable ? 'error' : 'icon'}
-                        type="delete"
-                      />
+                    <UnstyledButton onClick={onDeleteClick} disabled={!i.isDeletable}>
+                      <Icon size="md" color={i.isDeletable ? 'error' : 'icon'} type="delete" />
                     </UnstyledButton>
                   </>
                 )}

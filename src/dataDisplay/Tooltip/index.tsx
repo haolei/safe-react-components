@@ -1,7 +1,5 @@
 import React, { ReactElement } from 'react'
-import MUITooltip, {
-  TooltipProps as TooltipPropsMui,
-} from '@material-ui/core/Tooltip'
+import MUITooltip, { TooltipProps as TooltipPropsMui } from '@material-ui/core/Tooltip'
 import { withStyles, alpha } from '@material-ui/core/styles'
 
 import theme, { ThemeColors, ThemeTooltipSize } from '../../theme'
@@ -46,11 +44,7 @@ const getFontInfoBySize = (
   }
 }
 
-const customTooltip = ({
-  backgroundColor,
-  textColor,
-  size = 'md',
-}: TooltipProps) =>
+const customTooltip = ({ backgroundColor, textColor, size = 'md' }: TooltipProps) =>
   withStyles(() => ({
     popper: {
       zIndex: 2001,
@@ -61,9 +55,7 @@ const customTooltip = ({
         : theme.colors.overlay.color,
       boxShadow: `1px 2px 10px ${alpha(theme.colors.shadow.color, 0.18)}`,
       border: getBorderBySize(size),
-      color: textColor
-        ? (theme.colors[textColor] as string)
-        : theme.colors.text,
+      color: textColor ? (theme.colors[textColor] as string) : theme.colors.text,
       borderRadius: '4px',
       fontFamily: theme.fonts.fontFamily,
       padding: getPaddingBySize(size),

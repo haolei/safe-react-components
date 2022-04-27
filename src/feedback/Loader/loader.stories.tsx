@@ -19,6 +19,4 @@ export const loader = (): React.ReactElement => (
   </>
 )
 
-export const withColor = (): React.ReactElement => (
-  <Loader size="sm" color="pending" />
-)
+export const withColor = (): React.ReactElement => <Loader size="sm" color="pending" />

@@ -15,8 +15,7 @@ const Wrapper = styled.div`
   width: 400px;
   background-color: ${({ theme }) => theme.colors.white};
   border-radius: 8px;
-  box-shadow: 1px 2px 10px 0
-    ${({ theme }) => alpha(theme.colors.shadow.color, 0.18)};
+  box-shadow: 1px 2px 10px 0 ${({ theme }) => alpha(theme.colors.shadow.color, 0.18)};
 
   '&:focus': {
     outline: 'none';
@@ -36,8 +35,7 @@ const TitleSection = styled.div`
 const BodySection = styled.div<{ withoutBodyPadding?: boolean }>`
   max-height: 460px;
   overflow-y: auto;
-  padding: ${({ withoutBodyPadding }) =>
-    withoutBodyPadding ? '0' : '16px 24px'};
+  padding: ${({ withoutBodyPadding }) => (withoutBodyPadding ? '0' : '16px 24px')};
 `
 
 const FooterSection = styled.div`
@@ -51,12 +49,7 @@ type Props = {
   onConfirm: () => void
 }
 
-const FixedDialog = ({
-  body,
-  title,
-  onConfirm,
-  onCancel,
-}: Props): React.ReactElement => {
+const FixedDialog = ({ body, title, onConfirm, onCancel }: Props): React.ReactElement => {
   return (
     <Container>
       <Wrapper>
@@ -69,11 +62,7 @@ const FixedDialog = ({
         <BodySection>{body}</BodySection>
 
         <FooterSection>
-          <ModalFooterConfirmation
-            handleCancel={onCancel}
-            handleOk={onConfirm}
-            okText="Confirm"
-          />
+          <ModalFooterConfirmation handleCancel={onCancel} handleOk={onConfirm} okText="Confirm" />
         </FooterSection>
       </Wrapper>
     </Container>

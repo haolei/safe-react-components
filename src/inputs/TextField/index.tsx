@@ -1,8 +1,5 @@
 import React, { useEffect } from 'react'
-import TextFieldMui, {
-  StandardTextFieldProps,
-  TextFieldProps,
-} from '@material-ui/core/TextField'
+import TextFieldMui, { StandardTextFieldProps, TextFieldProps } from '@material-ui/core/TextField'
 import { InputBaseProps, InputAdornment } from '@material-ui/core'
 import styled from 'styled-components'
 
@@ -17,9 +14,7 @@ type Props = Omit<TextFieldProps, 'InputProps' | 'variant' | 'error'> & {
   }
 }
 
-const CustomTextField = styled((props: TextFieldProps) => (
-  <TextFieldMui {...props} />
-))<Props>`
+const CustomTextField = styled((props: TextFieldProps) => <TextFieldMui {...props} />)<Props>`
   && {
     width: 400px;
 
@@ -32,14 +27,12 @@ const CustomTextField = styled((props: TextFieldProps) => (
     }
 
     .MuiFormLabel-root.Mui-focused {
-      color: ${({ theme, meta }) =>
-        meta?.error ? theme.colors.error : theme.colors.primary};
+      color: ${({ theme, meta }) => (meta?.error ? theme.colors.error : theme.colors.primary)};
     }
 
     .MuiFilledInput-underline:after {
       border-bottom: 2px solid
-        ${({ theme, meta }) =>
-          meta?.error ? theme.colors.error : theme.colors.primary};
+        ${({ theme, meta }) => (meta?.error ? theme.colors.error : theme.colors.primary)};
     }
   }
 `

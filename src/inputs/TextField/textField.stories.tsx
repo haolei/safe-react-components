@@ -81,9 +81,7 @@ export const StartAdornment = (): React.ReactElement => {
         id="standard-name"
         label="Name"
         value={value}
-        onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-          setValue(e.target.value)
-        }
+        onChange={(e: React.ChangeEvent<HTMLInputElement>) => setValue(e.target.value)}
         startAdornment={adornment}
       />
     </form>
@@ -99,9 +97,7 @@ export const EndAdornment = (): React.ReactElement => {
         id="standard-name"
         label="Name"
         value={value}
-        onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-          setValue(e.target.value)
-        }
+        onChange={(e: React.ChangeEvent<HTMLInputElement>) => setValue(e.target.value)}
         endAdornment={adornment}
       />
     </form>
