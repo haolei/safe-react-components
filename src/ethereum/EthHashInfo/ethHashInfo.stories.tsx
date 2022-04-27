@@ -1,7 +1,7 @@
-import React from 'react';
+import React from 'react'
 
-import EthHashInfo from './index';
-import { EllipsisMenuItem } from '../..';
+import EthHashInfo from './index'
+import { EllipsisMenuItem } from '../..'
 
 export default {
   title: 'Ethereum/Eth hash Info',
@@ -9,25 +9,25 @@ export default {
   parameters: {
     componentSubtitle: 'Display Address/Tx information.',
   },
-};
+}
 
-const hash = '0x69904ff6d6100799344E5C9A2806936318F6ba4f';
-const explorerUrl = `https://etherscan.io/address/${hash}`;
-const explorerUrlAlt = `Show details on Etherscan`;
+const hash = '0x69904ff6d6100799344E5C9A2806936318F6ba4f'
+const explorerUrl = `https://etherscan.io/address/${hash}`
+const explorerUrlAlt = `Show details on Etherscan`
 
-export const Address = (): React.ReactElement => <EthHashInfo hash={hash} />;
+export const Address = (): React.ReactElement => <EthHashInfo hash={hash} />
 
 export const WithShortAddress = (): React.ReactElement => (
   <EthHashInfo hash={hash} shortenHash={4} />
-);
+)
 
 export const WithName = (): React.ReactElement => (
   <EthHashInfo hash={hash} name="Owner 1" />
-);
+)
 
 export const WithDefaultAvatar = (): React.ReactElement => (
   <EthHashInfo hash={hash} showAvatar shortenHash={4} />
-);
+)
 
 export const WithCustomAvatar = (): React.ReactElement => (
   <EthHashInfo
@@ -36,7 +36,7 @@ export const WithCustomAvatar = (): React.ReactElement => (
     customAvatar="https://gnosis-safe-token-logos.s3.amazonaws.com/0x5592EC0cfb4dbc12D3aB100b257153436a1f0FEa.png"
     shortenHash={4}
   />
-);
+)
 
 export const WithCustomAvatarFallback = (): React.ReactElement => (
   <EthHashInfo
@@ -46,7 +46,7 @@ export const WithCustomAvatarFallback = (): React.ReactElement => (
     customAvatarFallback="https://gnosis-safe-token-logos.s3.amazonaws.com/0x6810e776880C02933D47DB1b9fc05908e5386b96.png"
     shortenHash={4}
   />
-);
+)
 
 export const WithCustomAvatarFallbackIdenticon = (): React.ReactElement => (
   <EthHashInfo
@@ -55,7 +55,7 @@ export const WithCustomAvatarFallbackIdenticon = (): React.ReactElement => (
     customAvatar="https://no-file.png"
     shortenHash={4}
   />
-);
+)
 
 export const WithButtons = (): React.ReactElement => (
   <EthHashInfo
@@ -66,7 +66,7 @@ export const WithButtons = (): React.ReactElement => (
     explorerUrl={() => ({ alt: explorerUrlAlt, url: explorerUrl })}
     shortenHash={4}
   />
-);
+)
 
 export const WithShowShortNameAndShortHash = (): React.ReactElement => (
   <EthHashInfo
@@ -79,7 +79,7 @@ export const WithShowShortNameAndShortHash = (): React.ReactElement => (
     shortenHash={4}
     shouldShowShortName
   />
-);
+)
 
 export const WithShowShortName = (): React.ReactElement => (
   <EthHashInfo
@@ -91,7 +91,7 @@ export const WithShowShortName = (): React.ReactElement => (
     explorerUrl={() => ({ alt: explorerUrlAlt, url: explorerUrl })}
     shouldShowShortName
   />
-);
+)
 
 export const WithShowAndCopyShortName = (): React.ReactElement => (
   <EthHashInfo
@@ -104,7 +104,7 @@ export const WithShowAndCopyShortName = (): React.ReactElement => (
     shouldShowShortName
     shouldCopyShortName
   />
-);
+)
 
 export const WithCopyShortName = (): React.ReactElement => (
   <EthHashInfo
@@ -116,13 +116,13 @@ export const WithCopyShortName = (): React.ReactElement => (
     shortName="rin"
     shouldCopyShortName
   />
-);
+)
 
 export const WithMenu = (): React.ReactElement => {
   const items: EllipsisMenuItem[] = [
     { label: 'Send again', disabled: true, onClick: console.log },
     { label: 'Edit Address book entry', onClick: console.log },
-  ];
+  ]
   return (
     <EthHashInfo
       hash={hash}
@@ -132,9 +132,9 @@ export const WithMenu = (): React.ReactElement => {
       menuItems={items}
       shortenHash={4}
     />
-  );
-};
+  )
+}
 
 export const WithAvatarAndText = (): React.ReactElement => (
   <EthHashInfo hash={hash} showHash={false} name="Owner 1" showAvatar />
-);
+)

@@ -1,10 +1,10 @@
-import { ClickAwayListener } from '@material-ui/core';
-import Menu from '@material-ui/core/Menu';
-import MenuItem from '@material-ui/core/MenuItem';
-import React from 'react';
-import styled from 'styled-components';
+import { ClickAwayListener } from '@material-ui/core'
+import Menu from '@material-ui/core/Menu'
+import MenuItem from '@material-ui/core/MenuItem'
+import React from 'react'
+import styled from 'styled-components'
 
-import { FixedIcon } from '../..';
+import { FixedIcon } from '../..'
 
 const StyledMenu = styled(Menu)`
   && {
@@ -14,17 +14,17 @@ const StyledMenu = styled(Menu)`
       }
     }
   }
-`;
+`
 
 const MenuWrapper = styled.div`
   display: flex;
-`;
+`
 
 const MenuItemWrapper = styled.div`
   :focus {
     outline-color: ${({ theme }) => theme.colors.separator};
   }
-`;
+`
 
 const IconWrapper = styled.button`
   background: none;
@@ -44,32 +44,32 @@ const IconWrapper = styled.button`
   :hover {
     background-color: ${({ theme }) => theme.colors.separator};
   }
-`;
+`
 
 export type EllipsisMenuItem = {
-  label: string;
-  disabled?: boolean;
-  onClick: () => void;
-};
+  label: string
+  disabled?: boolean
+  onClick: () => void
+}
 
 type Props = {
-  menuItems: EllipsisMenuItem[];
-};
+  menuItems: EllipsisMenuItem[]
+}
 
 const EllipsisMenu = ({ menuItems }: Props): React.ReactElement => {
-  const [anchorEl, setAnchorEl] = React.useState<HTMLElement | null>(null);
+  const [anchorEl, setAnchorEl] = React.useState<HTMLElement | null>(null)
 
   const handleClick = (event: React.MouseEvent<HTMLElement>): void =>
-    setAnchorEl(event.currentTarget);
+    setAnchorEl(event.currentTarget)
 
   const closeMenuHandler = () => {
-    setAnchorEl(null);
-  };
+    setAnchorEl(null)
+  }
 
   const onMenuItemClick = (item: EllipsisMenuItem) => {
-    item.onClick();
-    closeMenuHandler();
-  };
+    item.onClick()
+    closeMenuHandler()
+  }
 
   return (
     <ClickAwayListener onClickAway={closeMenuHandler}>
@@ -82,7 +82,7 @@ const EllipsisMenu = ({ menuItems }: Props): React.ReactElement => {
           keepMounted
           onClose={closeMenuHandler}
           open={Boolean(anchorEl)}>
-          {menuItems.map((item) => (
+          {menuItems.map(item => (
             <MenuItemWrapper key={item.label}>
               <MenuItem
                 disabled={item.disabled}
@@ -94,7 +94,7 @@ const EllipsisMenu = ({ menuItems }: Props): React.ReactElement => {
         </StyledMenu>
       </MenuWrapper>
     </ClickAwayListener>
-  );
-};
+  )
+}
 
-export default EllipsisMenu;
+export default EllipsisMenu

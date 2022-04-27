@@ -1,6 +1,6 @@
-import React from 'react';
+import React from 'react'
 
-import FixedDialog from './index';
+import FixedDialog from './index'
 
 export default {
   title: 'Data Display/FixedDialog',
@@ -10,7 +10,7 @@ export default {
     rendered inside a container instead of taking position absolute.
     `,
   },
-};
+}
 
 export const SimpleFixedDialog = (): React.ReactElement => (
   <FixedDialog
@@ -19,4 +19,4 @@ export const SimpleFixedDialog = (): React.ReactElement => (
     onCancel={() => undefined}
     onConfirm={() => undefined}
   />
-);
+)

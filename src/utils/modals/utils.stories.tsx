@@ -1,6 +1,6 @@
-import React from 'react';
+import React from 'react'
 
-import { ModalFooterConfirmation } from './utils';
+import { ModalFooterConfirmation } from './utils'
 
 export default {
   title: 'Utils/Modals/utils/FooterConfirmation',
@@ -8,7 +8,7 @@ export default {
   parameters: {
     componentSubtitle: 'A generic confirmation footer for modals',
   },
-};
+}
 
 export const ModalFooter = (): React.ReactElement => {
   return (
@@ -18,8 +18,8 @@ export const ModalFooter = (): React.ReactElement => {
       handleCancel={() => undefined}
       handleOk={() => undefined}
     />
-  );
-};
+  )
+}
 
 export const OkDisabled = (): React.ReactElement => {
   return (
@@ -30,5 +30,5 @@ export const OkDisabled = (): React.ReactElement => {
       handleCancel={() => undefined}
       handleOk={() => undefined}
     />
-  );
-};
+  )
+}

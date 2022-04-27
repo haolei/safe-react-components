@@ -1,5 +1,5 @@
-import { TextFieldProps } from '@material-ui/core';
-import { css } from 'styled-components';
+import { TextFieldProps } from '@material-ui/core'
+import { css } from 'styled-components'
 
 export const inputLabelStyles = css<TextFieldProps>`
   &:hover {
@@ -41,7 +41,7 @@ export const inputLabelStyles = css<TextFieldProps>`
             width: 1px;`
         : ''}
   }
-`;
+`
 
 export const inputStyles = css<TextFieldProps>`
   .MuiOutlinedInput-root {
@@ -97,7 +97,7 @@ export const inputStyles = css<TextFieldProps>`
     border-color: ${({ theme, error }) =>
       error ? theme.colors.error : theme.colors.inputFilled};
   }
-`;
+`
 
 export const errorStyles = css<TextFieldProps>`
   .Mui-error {
@@ -111,4 +111,4 @@ export const errorStyles = css<TextFieldProps>`
       border-color: ${({ theme }) => theme.colors.error};
     }
   }
-`;
+`

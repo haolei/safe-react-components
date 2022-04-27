@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from 'react'
+import styled from 'styled-components'
 
 const Wrapper = styled.div`
   padding: 16px 0;
@@ -9,15 +9,15 @@ const Wrapper = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: flex-end;
-`;
+`
 
 type Props = {
-  children: React.ReactNode;
-  className?: string;
-};
+  children: React.ReactNode
+  className?: string
+}
 
 const Menu = ({ children, className }: Props): React.ReactElement => (
   <Wrapper className={className}>{children}</Wrapper>
-);
+)
 
-export default Menu;
+export default Menu

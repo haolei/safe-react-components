@@ -1,7 +1,7 @@
-import React from 'react';
+import React from 'react'
 
-import { Accordion, AccordionSummary, AccordionDetails } from './index';
-import { Card, Text, IconText } from '../../index';
+import { Accordion, AccordionSummary, AccordionDetails } from './index'
+import { Card, Text, IconText } from '../../index'
 
 export default {
   title: 'Data Display/Accordion',
@@ -9,7 +9,7 @@ export default {
   parameters: {
     componentSubtitle: 'Expansion panels with Summary and Detail content.',
   },
-};
+}
 
 export const SimpleAccordion = (): React.ReactElement => (
   <Card>
@@ -62,7 +62,7 @@ export const SimpleAccordion = (): React.ReactElement => (
       </AccordionDetails>
     </Accordion>
   </Card>
-);
+)
 
 export const CompactAccordion = (): React.ReactElement => (
   <div
@@ -122,4 +122,4 @@ export const CompactAccordion = (): React.ReactElement => (
       </AccordionDetails>
     </Accordion>
   </div>
-);
+)

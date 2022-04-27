@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 export default {
   sm: (
@@ -32,4 +32,4 @@ export default {
       </g>
     </svg>
   ),
-};
+}

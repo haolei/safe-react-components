@@ -1,21 +1,21 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement } from 'react'
 import AccordionMUI, {
   AccordionProps as AccordionMUIProps,
-} from '@material-ui/core/Accordion';
+} from '@material-ui/core/Accordion'
 import AccordionSummaryMUI, {
   AccordionSummaryProps as AccordionSummaryMUIProps,
-} from '@material-ui/core/AccordionSummary';
-import styled from 'styled-components';
+} from '@material-ui/core/AccordionSummary'
+import styled from 'styled-components'
 
-import FixedIcon from '../FixedIcon';
+import FixedIcon from '../FixedIcon'
 
 type AccordionProps = AccordionMUIProps & {
-  compact?: boolean;
-};
+  compact?: boolean
+}
 
 type StyledAccordionProps = AccordionMUIProps & {
-  $compact?: AccordionProps['compact'];
-};
+  $compact?: AccordionProps['compact']
+}
 
 const StyledAccordion = styled(AccordionMUI)<StyledAccordionProps>`
   &.MuiAccordion-root {
@@ -42,7 +42,7 @@ const StyledAccordion = styled(AccordionMUI)<StyledAccordionProps>`
       padding: 16px;
     }
   }
-`;
+`
 
 const StyledAccordionSummary = styled(AccordionSummaryMUI)`
   &.MuiAccordionSummary-root {
@@ -66,7 +66,7 @@ const StyledAccordionSummary = styled(AccordionSummaryMUI)`
       padding: 16px;
     }
   }
-`;
+`
 
 export const Accordion = ({
   compact,
@@ -77,8 +77,8 @@ export const Accordion = ({
     <StyledAccordion square elevation={0} $compact={compact} {...props}>
       {children}
     </StyledAccordion>
-  );
-};
+  )
+}
 
 export const AccordionSummary = ({
   children,
@@ -90,8 +90,8 @@ export const AccordionSummary = ({
       {...props}>
       {children}
     </StyledAccordionSummary>
-  );
-};
+  )
+}
 
-export { default as AccordionActions } from '@material-ui/core/AccordionActions';
-export { default as AccordionDetails } from '@material-ui/core/AccordionDetails';
+export { default as AccordionActions } from '@material-ui/core/AccordionActions'
+export { default as AccordionDetails } from '@material-ui/core/AccordionDetails'

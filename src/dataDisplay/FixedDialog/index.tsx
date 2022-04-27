@@ -1,15 +1,15 @@
-import React from 'react';
-import styled from 'styled-components';
-import { alpha } from '@material-ui/core/styles';
+import React from 'react'
+import styled from 'styled-components'
+import { alpha } from '@material-ui/core/styles'
 
-import { Title, ModalFooterConfirmation } from '../../index';
+import { Title, ModalFooterConfirmation } from '../../index'
 
 const Container = styled.div`
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-`;
+`
 
 const Wrapper = styled.div`
   width: 400px;
@@ -21,7 +21,7 @@ const Wrapper = styled.div`
   '&:focus': {
     outline: 'none';
   }
-`;
+`
 
 const TitleSection = styled.div`
   display: flex;
@@ -31,25 +31,25 @@ const TitleSection = styled.div`
   border-bottom: 2px solid ${({ theme }) => theme.colors.separator};
   height: 74px;
   box-sizing: border-box;
-`;
+`
 
 const BodySection = styled.div<{ withoutBodyPadding?: boolean }>`
   max-height: 460px;
   overflow-y: auto;
   padding: ${({ withoutBodyPadding }) =>
     withoutBodyPadding ? '0' : '16px 24px'};
-`;
+`
 
 const FooterSection = styled.div`
   border-top: 2px solid ${({ theme }) => theme.colors.separator};
-`;
+`
 
 type Props = {
-  title: string;
-  body: React.ReactNode;
-  onCancel: () => void;
-  onConfirm: () => void;
-};
+  title: string
+  body: React.ReactNode
+  onCancel: () => void
+  onConfirm: () => void
+}
 
 const FixedDialog = ({
   body,
@@ -77,7 +77,7 @@ const FixedDialog = ({
         </FooterSection>
       </Wrapper>
     </Container>
-  );
-};
+  )
+}
 
-export default FixedDialog;
+export default FixedDialog

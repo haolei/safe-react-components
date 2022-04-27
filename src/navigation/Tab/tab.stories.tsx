@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 
-import Tab, { Item } from './index';
+import Tab, { Item } from './index'
 
 export default {
   title: 'Navigation/Tab',
@@ -8,7 +8,7 @@ export default {
   parameters: {
     componentSubtitle: 'Tab component used in Safe Multisig.',
   },
-};
+}
 
 const items: Item[] = [
   { id: '1', label: 'Assets', icon: 'assets' },
@@ -16,10 +16,10 @@ const items: Item[] = [
   { id: '3', label: 'Apps', icon: 'apps' },
   { id: '4', label: 'Address Book', icon: 'addressBook', disabled: true },
   { id: '5', label: 'Settings', customContent: <div>custom</div> },
-];
+]
 
 export const SimpleTab = (): React.ReactElement => {
-  const [selected, setSelected] = useState('3');
+  const [selected, setSelected] = useState('3')
 
   return (
     <>
@@ -31,11 +31,11 @@ export const SimpleTab = (): React.ReactElement => {
       />
       {selected}
     </>
-  );
-};
+  )
+}
 
 export const TabContained = (): React.ReactElement => {
-  const [selected, setSelected] = useState('3');
+  const [selected, setSelected] = useState('3')
 
   return (
     <>
@@ -47,11 +47,11 @@ export const TabContained = (): React.ReactElement => {
       />
       {selected}
     </>
-  );
-};
+  )
+}
 
 export const TabContainedFull = (): React.ReactElement => {
-  const [selected, setSelected] = useState('3');
+  const [selected, setSelected] = useState('3')
 
   return (
     <>
@@ -64,5 +64,5 @@ export const TabContainedFull = (): React.ReactElement => {
       />
       {selected}
     </>
-  );
-};
+  )
+}

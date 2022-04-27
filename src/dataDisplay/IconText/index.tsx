@@ -1,26 +1,26 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from 'react'
+import styled from 'styled-components'
 
 import {
   ThemeColors,
   ThemeIconSize,
   ThemeMargin,
   ThemeTextSize,
-} from '../../theme';
-import { Icon, IconType } from '../Icon';
-import Text from '../Text';
+} from '../../theme'
+import { Icon, IconType } from '../Icon'
+import Text from '../Text'
 
 type Props = {
-  iconType: keyof IconType;
-  iconSize: ThemeIconSize;
-  iconColor?: ThemeColors;
-  margin?: ThemeMargin;
-  textSize: ThemeTextSize;
-  color?: ThemeColors;
-  text: string;
-  className?: string;
-  iconSide?: 'left' | 'right';
-};
+  iconType: keyof IconType
+  iconSize: ThemeIconSize
+  iconColor?: ThemeColors
+  margin?: ThemeMargin
+  textSize: ThemeTextSize
+  color?: ThemeColors
+  text: string
+  className?: string
+  iconSide?: 'left' | 'right'
+}
 
 const LeftIconText = styled.div<{ margin: ThemeMargin }>`
   display: flex;
@@ -28,7 +28,7 @@ const LeftIconText = styled.div<{ margin: ThemeMargin }>`
   svg {
     margin: 0 ${({ theme, margin }) => theme.margin[margin]} 0 0;
   }
-`;
+`
 
 const RightIconText = styled.div<{ margin: ThemeMargin }>`
   display: flex;
@@ -36,7 +36,7 @@ const RightIconText = styled.div<{ margin: ThemeMargin }>`
   svg {
     margin: 0 0 0 ${({ theme, margin }) => theme.margin[margin]};
   }
-`;
+`
 
 /**
  * The `IconText` renders an icon next to a text
@@ -66,7 +66,7 @@ const IconText = ({
         {text}
       </Text>
     </LeftIconText>
-  );
-};
+  )
+}
 
-export default IconText;
+export default IconText

@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 
-import GenericModal from './index';
-import { Button } from '../../../index';
+import GenericModal from './index'
+import { Button } from '../../../index'
 
 export default {
   title: 'Utils/Modals/Generic',
@@ -9,10 +9,10 @@ export default {
   parameters: {
     componentSubtitle: 'A generic modal with custom Title, Body and Footer',
   },
-};
+}
 
 export const SimpleModal = (): React.ReactElement => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false)
   return (
     <>
       <Button size="md" color="primary" onClick={() => setIsOpen(!isOpen)}>
@@ -27,5 +27,5 @@ export const SimpleModal = (): React.ReactElement => {
         />
       )}
     </>
-  );
-};
+  )
+}

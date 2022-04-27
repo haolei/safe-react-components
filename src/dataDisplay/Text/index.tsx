@@ -1,20 +1,20 @@
-import React from 'react';
-import styled from 'styled-components';
-import Tooltip from '@material-ui/core/Tooltip';
-import { withStyles, alpha } from '@material-ui/core/styles';
+import React from 'react'
+import styled from 'styled-components'
+import Tooltip from '@material-ui/core/Tooltip'
+import { withStyles, alpha } from '@material-ui/core/styles'
 
-import theme, { ThemeTextSize, ThemeColors } from '../../theme';
+import theme, { ThemeTextSize, ThemeColors } from '../../theme'
 
 type Props = {
-  children: React.ReactNode;
-  size: ThemeTextSize;
-  color?: ThemeColors;
-  strong?: boolean;
-  center?: boolean;
-  tooltip?: string;
-  className?: string;
-  as?: 'span' | 'p';
-};
+  children: React.ReactNode
+  size: ThemeTextSize
+  color?: ThemeColors
+  strong?: boolean
+  center?: boolean
+  tooltip?: string
+  className?: string
+  as?: 'span' | 'p'
+}
 
 const StyledText = styled.p<Props>`
   font-family: ${({ theme }) => theme.fonts.fontFamily};
@@ -25,7 +25,7 @@ const StyledText = styled.p<Props>`
   font-size: ${({ size, theme }) => theme.text.size[size].fontSize};
   line-height: ${({ size, theme }) => theme.text.size[size].lineHeight};
   text-align: ${({ center }) => (center ? 'center' : 'start')};
-`;
+`
 
 const StyledTooltip = withStyles(() => ({
   tooltip: {
@@ -37,7 +37,7 @@ const StyledTooltip = withStyles(() => ({
     color: theme.colors.white,
     boxShadow: 'transparent',
   },
-}))(Tooltip);
+}))(Tooltip)
 
 const Text = ({
   children,
@@ -49,7 +49,7 @@ const Text = ({
     <StyledText as={as} {...rest}>
       {children}
     </StyledText>
-  );
+  )
 
   return tooltip === undefined ? (
     TextElement
@@ -57,7 +57,7 @@ const Text = ({
     <StyledTooltip title={tooltip} placement="bottom" arrow>
       {TextElement}
     </StyledTooltip>
-  );
-};
+  )
+}
 
-export default Text;
+export default Text

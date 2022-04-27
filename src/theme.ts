@@ -150,19 +150,19 @@ const theme = {
       lg: '',
     },
   },
-};
+}
 
-export type Theme = typeof theme;
+export type Theme = typeof theme
 
-export type ThemeButtonSize = keyof Theme['buttons']['size'];
-export type ThemeColors = keyof Theme['colors'];
-export type ThemeIdenticonSize = keyof Theme['identicon']['size'];
-export type ThemeIconSize = keyof Theme['icons']['size'];
-export type ThemeMargin = keyof Theme['margin'];
-export type ThemeLoaderSize = keyof Theme['loader']['size'];
-export type ThemeStatusDotSize = keyof Theme['statusDot']['size'];
-export type ThemeTextSize = keyof Theme['text']['size'];
-export type ThemeTitleSize = keyof Theme['title']['size'];
-export type ThemeTooltipSize = keyof Theme['tooltip']['size'];
+export type ThemeButtonSize = keyof Theme['buttons']['size']
+export type ThemeColors = keyof Theme['colors']
+export type ThemeIdenticonSize = keyof Theme['identicon']['size']
+export type ThemeIconSize = keyof Theme['icons']['size']
+export type ThemeMargin = keyof Theme['margin']
+export type ThemeLoaderSize = keyof Theme['loader']['size']
+export type ThemeStatusDotSize = keyof Theme['statusDot']['size']
+export type ThemeTextSize = keyof Theme['text']['size']
+export type ThemeTitleSize = keyof Theme['title']['size']
+export type ThemeTooltipSize = keyof Theme['tooltip']['size']
 
-export default theme;
+export default theme

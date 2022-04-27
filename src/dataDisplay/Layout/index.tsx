@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from 'react'
+import styled from 'styled-components'
 
 const Container = styled.div`
   font-size: 1.5em;
@@ -24,24 +24,24 @@ const Container = styled.div`
       'body'
       'footer';
   }
-`;
+`
 
 const Title = styled.div`
   background: rgb(137, 180, 206);
   grid-area: title;
-`;
+`
 const Navbar = styled.div`
   background: rgb(139, 131, 127);
   grid-area: navbar;
-`;
+`
 const Body = styled.div`
   background: rgb(193, 197, 197);
   grid-area: body;
-`;
+`
 const Footer = styled.div`
   background: rgb(158, 158, 158);
   grid-area: footer;
-`;
+`
 
 const Layout = (): React.ReactElement => (
   <Container>
@@ -50,6 +50,6 @@ const Layout = (): React.ReactElement => (
     <Body>Body</Body>
     <Footer>footer</Footer>
   </Container>
-);
+)
 
-export default Layout;
+export default Layout

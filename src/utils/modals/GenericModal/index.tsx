@@ -1,12 +1,12 @@
-import React from 'react';
-import Modal from '@material-ui/core/Modal';
-import { makeStyles } from '@material-ui/core/styles';
-import { alpha } from '@material-ui/core/styles';
-import styled from 'styled-components';
-import Media from 'react-media';
+import React from 'react'
+import Modal from '@material-ui/core/Modal'
+import { makeStyles } from '@material-ui/core/styles'
+import { alpha } from '@material-ui/core/styles'
+import styled from 'styled-components'
+import Media from 'react-media'
 
-import theme from '../../../theme';
-import { Icon, Title } from '../../../index';
+import theme from '../../../theme'
+import { Icon, Title } from '../../../index'
 
 const StyledButton = styled.button`
   background: none;
@@ -27,37 +27,37 @@ const StyledButton = styled.button`
     background: ${({ theme }) => theme.colors.separator};
     border-radius: 16px;
   }
-`;
+`
 
 const TitleSection = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 16px 24px;
   border-bottom: 2px solid ${({ theme }) => theme.colors.separator};
-`;
+`
 
 const BodySection = styled.div<{
-  withoutBodyPadding?: boolean;
-  smallHeight: boolean;
+  withoutBodyPadding?: boolean
+  smallHeight: boolean
 }>`
   max-height: ${({ smallHeight }) => (smallHeight ? '280px' : '460px')};
   overflow-y: auto;
   padding: ${({ withoutBodyPadding }) =>
     withoutBodyPadding ? '0' : '16px 24px'};
-`;
+`
 
 const FooterSection = styled.div`
   border-top: 2px solid ${({ theme }) => theme.colors.separator};
   padding: 16px 24px;
-`;
+`
 
 export type GenericModalProps = {
-  title: string | React.ReactNode;
-  body: React.ReactNode;
-  withoutBodyPadding?: boolean;
-  footer?: React.ReactNode;
-  onClose: () => void;
-};
+  title: string | React.ReactNode
+  body: React.ReactNode
+  withoutBodyPadding?: boolean
+  footer?: React.ReactNode
+  onClose: () => void
+}
 
 const useStyles = makeStyles({
   modal: {
@@ -84,7 +84,7 @@ const useStyles = makeStyles({
       outline: 'none',
     },
   },
-});
+})
 
 const GenericModal = ({
   body,
@@ -94,7 +94,7 @@ const GenericModal = ({
   withoutBodyPadding,
   smallHeight,
 }: GenericModalProps & { smallHeight: boolean }) => {
-  const classes = useStyles({ smallHeight });
+  const classes = useStyles({ smallHeight })
 
   return (
     <Modal open className={classes.modal}>
@@ -117,13 +117,13 @@ const GenericModal = ({
         {footer && <FooterSection>{footer}</FooterSection>}
       </div>
     </Modal>
-  );
-};
+  )
+}
 
 const MediaModal = (props: GenericModalProps): React.ReactElement => (
   <Media query={{ maxHeight: 500 }}>
-    {(matches) => <GenericModal {...props} smallHeight={matches} />}
+    {matches => <GenericModal {...props} smallHeight={matches} />}
   </Media>
-);
+)
 
-export default MediaModal;
+export default MediaModal

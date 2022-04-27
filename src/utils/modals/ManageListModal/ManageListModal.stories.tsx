@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 
-import { Button, ManageListModal } from '../../../index';
-import appIcon from './appsIcon.svg';
+import { Button, ManageListModal } from '../../../index'
+import appIcon from './appsIcon.svg'
 
 export default {
   title: 'Utils/Modals/ManageList',
@@ -10,10 +10,10 @@ export default {
     componentSubtitle:
       'A Modal to Manage a list by enabling/disabled list items',
   },
-};
+}
 
 export const SimpleModal = (): React.ReactElement => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false)
   const [items, setItems] = useState([
     {
       id: '1',
@@ -39,17 +39,17 @@ export const SimpleModal = (): React.ReactElement => {
         'Long desc ever since the 1500s do not finish over the ocean of this',
       checked: true,
     },
-  ]);
+  ])
 
   const onItemToggle = (itemId: string | number, checked: boolean) => {
-    const copy = [...items];
-    const localItem = copy.find((i) => i.id === itemId);
+    const copy = [...items]
+    const localItem = copy.find(i => i.id === itemId)
     if (!localItem) {
-      return;
+      return
     }
-    localItem.checked = checked;
-    setItems(copy);
-  };
+    localItem.checked = checked
+    setItems(copy)
+  }
 
   return (
     <>
@@ -70,5 +70,5 @@ export const SimpleModal = (): React.ReactElement => {
         />
       )}
     </>
-  );
-};
+  )
+}

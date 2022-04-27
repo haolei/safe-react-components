@@ -1,16 +1,16 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from 'react'
+import styled from 'styled-components'
 
-import { ThemeColors, ThemeTextSize, ThemeIconSize } from '../../theme';
-import { Icon, IconType } from '../../dataDisplay/Icon';
-import { Text } from '../../index';
+import { ThemeColors, ThemeTextSize, ThemeIconSize } from '../../theme'
+import { Icon, IconType } from '../../dataDisplay/Icon'
+import { Text } from '../../index'
 
 export interface Props extends React.ComponentPropsWithoutRef<'button'> {
-  iconType?: keyof IconType;
-  iconSize?: ThemeIconSize;
-  textSize?: ThemeTextSize;
-  color: ThemeColors;
-  children: React.ReactNode;
+  iconType?: keyof IconType
+  iconSize?: ThemeIconSize
+  textSize?: ThemeTextSize
+  color: ThemeColors
+  children: React.ReactNode
 }
 
 const StyledButtonLink = styled.button<Props>`
@@ -26,11 +26,11 @@ const StyledButtonLink = styled.button<Props>`
   :focus {
     outline: none;
   }
-`;
+`
 
 const StyledText = styled(Text)`
   margin: 0 4px;
-`;
+`
 
 const ButtonLink = ({
   iconType,
@@ -46,7 +46,7 @@ const ButtonLink = ({
         {children}
       </StyledText>
     </StyledButtonLink>
-  );
-};
+  )
+}
 
-export default ButtonLink;
+export default ButtonLink

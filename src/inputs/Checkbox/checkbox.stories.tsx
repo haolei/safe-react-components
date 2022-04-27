@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 
-import Checkbox from './index';
+import Checkbox from './index'
 
 export default {
   title: 'Inputs/Checkbox',
@@ -8,10 +8,10 @@ export default {
   parameters: {
     componentSubtitle: 'Checkbox Input.',
   },
-};
+}
 
 export const SimpleCheckbox = (): React.ReactElement => {
-  const [enabled, setEnabled] = useState(true);
+  const [enabled, setEnabled] = useState(true)
   return (
     <Checkbox
       name="checkbox"
@@ -19,11 +19,11 @@ export const SimpleCheckbox = (): React.ReactElement => {
       onChange={(_, checked) => setEnabled(checked)}
       label="Some checkbox"
     />
-  );
-};
+  )
+}
 
 export const WithError = (): React.ReactElement => {
-  const [enabled, setEnabled] = useState(false);
+  const [enabled, setEnabled] = useState(false)
   return (
     <Checkbox
       name="checkboxWithError"
@@ -32,5 +32,5 @@ export const WithError = (): React.ReactElement => {
       onChange={(_, checked) => setEnabled(checked)}
       label="Some checkbox"
     />
-  );
-};
+  )
+}

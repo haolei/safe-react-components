@@ -1,55 +1,55 @@
-import React, { ReactElement, ReactNode, HTMLAttributes } from 'react';
+import React, { ReactElement, ReactNode, HTMLAttributes } from 'react'
 import ButtonMUI, {
   ButtonProps as ButtonMUIProps,
-} from '@material-ui/core/Button';
-import { alpha } from '@material-ui/core/styles';
+} from '@material-ui/core/Button'
+import { alpha } from '@material-ui/core/styles'
 
 import styled, {
   css,
   DefaultTheme,
   FlattenInterpolation,
   ThemeProps,
-} from 'styled-components';
+} from 'styled-components'
 
 import theme, {
   ThemeButtonSize,
   ThemeIconSize,
   ThemeTextSize,
-} from '../../theme';
-import { Icon, IconType, Props as IconProps } from '../../dataDisplay';
+} from '../../theme'
+import { Icon, IconType, Props as IconProps } from '../../dataDisplay'
 
-type Colors = 'primary' | 'secondary' | 'error';
-type Variations = 'bordered' | 'contained' | 'outlined';
+type Colors = 'primary' | 'secondary' | 'error'
+type Variations = 'bordered' | 'contained' | 'outlined'
 
 type CustomButtonMuiProps = Omit<
   ButtonMUIProps,
   'size' | 'color' | 'variant'
 > & {
-  to?: string;
-  component?: ReactNode;
-};
+  to?: string
+  component?: ReactNode
+}
 type LocalProps = {
-  children?: ReactNode;
-  color?: Colors;
-  variant?: Variations;
-  size: ThemeButtonSize;
-  textSize?: ThemeTextSize;
-  iconType?: keyof IconType;
-  iconSize?: ThemeIconSize;
-};
+  children?: ReactNode
+  color?: Colors
+  variant?: Variations
+  size: ThemeButtonSize
+  textSize?: ThemeTextSize
+  iconType?: keyof IconType
+  iconSize?: ThemeIconSize
+}
 
 type Props = LocalProps &
   CustomButtonMuiProps &
-  HTMLAttributes<HTMLButtonElement>;
+  HTMLAttributes<HTMLButtonElement>
 
 const StyledIcon = styled(Icon)<IconProps>`
   margin-right: 5px;
-`;
+`
 
 const customStyles: {
   [key in Colors]: {
-    [key in Variations]: FlattenInterpolation<ThemeProps<DefaultTheme>>;
-  };
+    [key in Variations]: FlattenInterpolation<ThemeProps<DefaultTheme>>
+  }
 } = {
   primary: {
     contained: css`
@@ -211,7 +211,7 @@ const customStyles: {
       }
     `,
   },
-};
+}
 
 const StyledButton = styled(ButtonMUI)<{ $localProps: LocalProps }>`
   && {
@@ -249,11 +249,11 @@ const StyledButton = styled(ButtonMUI)<{ $localProps: LocalProps }>`
         $localProps.color !== undefined &&
         $localProps.variant !== undefined
       ) {
-        return customStyles[$localProps.color][$localProps.variant];
+        return customStyles[$localProps.color][$localProps.variant]
       }
     }}
   }
-`;
+`
 
 export const Button = ({
   children,
@@ -274,5 +274,5 @@ export const Button = ({
       {iconType && <StyledIcon size={iconSize} type={iconType} />}
       {children}
     </StyledButton>
-  );
-};
+  )
+}

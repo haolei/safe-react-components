@@ -1,17 +1,17 @@
-import React from 'react';
-import Radio from '@material-ui/core/Radio';
-import RadioGroup, { RadioGroupProps } from '@material-ui/core/RadioGroup';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
+import React from 'react'
+import Radio from '@material-ui/core/Radio'
+import RadioGroup, { RadioGroupProps } from '@material-ui/core/RadioGroup'
+import FormControlLabel from '@material-ui/core/FormControlLabel'
 
 type Props = {
-  name: string;
-  value: any;
-  onRadioChange: (value: string) => void;
+  name: string
+  value: any
+  onRadioChange: (value: string) => void
   options: Array<{
-    label: string;
-    value: any;
-  }>;
-} & RadioGroupProps;
+    label: string
+    value: any
+  }>
+} & RadioGroupProps
 
 const RadioButtons = ({
   name,
@@ -21,7 +21,7 @@ const RadioButtons = ({
   ...rest
 }: Props): React.ReactElement => {
   const onChangeInternal = (event: React.ChangeEvent<HTMLInputElement>) =>
-    onRadioChange((event.target as HTMLInputElement).value);
+    onRadioChange((event.target as HTMLInputElement).value)
 
   return (
     <RadioGroup
@@ -30,7 +30,7 @@ const RadioButtons = ({
       value={value}
       onChange={onChangeInternal}
       {...rest}>
-      {options.map((o) => (
+      {options.map(o => (
         <FormControlLabel
           key={o.value}
           label={o.label}
@@ -39,7 +39,7 @@ const RadioButtons = ({
         />
       ))}
     </RadioGroup>
-  );
-};
+  )
+}
 
-export default RadioButtons;
+export default RadioButtons

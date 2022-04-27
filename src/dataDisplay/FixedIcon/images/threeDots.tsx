@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 const icon = (
   <svg
@@ -12,6 +12,6 @@ const icon = (
       <rect width="4" height="4" rx="2" />
     </g>
   </svg>
-);
+)
 
-export default icon;
+export default icon

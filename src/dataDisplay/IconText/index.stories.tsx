@@ -1,6 +1,6 @@
-import React from 'react';
+import React from 'react'
 
-import IconText from './index';
+import IconText from './index'
 
 export default {
   title: 'Data Display/Icon Text',
@@ -8,7 +8,7 @@ export default {
   parameters: {
     componentSubtitle: 'IconText, It combines both Icon and Text component.',
   },
-};
+}
 
 export const Sizes = (): React.ReactElement => {
   return (
@@ -43,8 +43,8 @@ export const Sizes = (): React.ReactElement => {
         text="Some text"
       />
     </>
-  );
-};
+  )
+}
 
 export const IconPosition = (): React.ReactElement => {
   return (
@@ -83,8 +83,8 @@ export const IconPosition = (): React.ReactElement => {
         iconSide="right"
       />
     </>
-  );
-};
+  )
+}
 
 export const IconMargin = (): React.ReactElement => {
   return (
@@ -106,8 +106,8 @@ export const IconMargin = (): React.ReactElement => {
         iconSide="right"
       />
     </>
-  );
-};
+  )
+}
 
 export const Color = (): React.ReactElement => {
   return (
@@ -133,5 +133,5 @@ export const Color = (): React.ReactElement => {
         color="text"
       />
     </>
-  );
-};
+  )
+}

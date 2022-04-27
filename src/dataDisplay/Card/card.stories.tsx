@@ -1,7 +1,7 @@
-import React from 'react';
+import React from 'react'
 
-import Card from './index';
-import { Button, Dot, Title, Text } from '../../index';
+import Card from './index'
+import { Button, Dot, Title, Text } from '../../index'
 
 export default {
   title: 'Data Display/Card',
@@ -9,7 +9,7 @@ export default {
   parameters: {
     componentSubtitle: 'Useful to wrap content inside a styled container.',
   },
-};
+}
 
 export const SimpleCard = (): React.ReactElement => (
   <Card>
@@ -30,7 +30,7 @@ export const SimpleCard = (): React.ReactElement => (
       </Text>
     </Button>
   </Card>
-);
+)
 
 export const CardDisabled = (): React.ReactElement => (
   <Card disabled>
@@ -51,4 +51,4 @@ export const CardDisabled = (): React.ReactElement => (
       </Text>
     </Button>
   </Card>
-);
+)

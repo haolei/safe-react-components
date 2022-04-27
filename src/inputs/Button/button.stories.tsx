@@ -1,7 +1,7 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from 'react'
+import styled from 'styled-components'
 
-import { Button } from './index';
+import { Button } from './index'
 
 export default {
   title: 'Inputs/Button',
@@ -9,13 +9,13 @@ export default {
   parameters: {
     componentSubtitle: 'Button component with several variants',
   },
-};
+}
 
 const ButtonContainer = styled.div`
   button {
     margin: 10px;
   }
-`;
+`
 
 export const SimpleButton = (): React.ReactElement => (
   <ButtonContainer>
@@ -47,7 +47,7 @@ export const SimpleButton = (): React.ReactElement => (
       Text
     </Button>
   </ButtonContainer>
-);
+)
 
 export const DisabledButton = (): React.ReactElement => (
   <ButtonContainer>
@@ -81,14 +81,14 @@ export const DisabledButton = (): React.ReactElement => (
       Text
     </Button>
   </ButtonContainer>
-);
+)
 
 export const Sizes = (): React.ReactElement => (
   <ButtonContainer>
     <Button size="md">Text</Button>
     <Button size="lg">Text</Button>
   </ButtonContainer>
-);
+)
 
 export const withIcon = (): React.ReactElement => (
   <ButtonContainer>
@@ -130,7 +130,7 @@ export const withIcon = (): React.ReactElement => (
       Text
     </Button>
   </ButtonContainer>
-);
+)
 
 export const withIconSize = (): React.ReactElement => (
   <ButtonContainer>
@@ -150,7 +150,7 @@ export const withIconSize = (): React.ReactElement => (
       Text
     </Button>
   </ButtonContainer>
-);
+)
 
 export const withCustomComponent = (): React.ReactElement => {
   /* eslint-disable react/display-name */
@@ -162,8 +162,8 @@ export const withCustomComponent = (): React.ReactElement => {
       <a {...props} ref={ref}>
         {props.children}
       </a>
-    );
-  });
+    )
+  })
 
   return (
     <Button
@@ -176,5 +176,5 @@ export const withCustomComponent = (): React.ReactElement => {
       to="some_url">
       Button as Link
     </Button>
-  );
-};
+  )
+}

@@ -1,7 +1,7 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from 'react'
+import styled from 'styled-components'
 
-import { Icon, IconTypes } from './index';
+import { Icon, IconTypes } from './index'
 
 export default {
   title: 'Data Display/Icon',
@@ -10,13 +10,13 @@ export default {
     componentSubtitle:
       'Icon component, you can select one of the set of icons we already have configured.',
   },
-};
+}
 
 export const Icons = (): React.ReactElement => {
   const Wrapper = styled.div`
     display: flex;
     flex-wrap: wrap;
-  `;
+  `
 
   const IconBox = styled.div`
     display: flex;
@@ -30,7 +30,7 @@ export const Icons = (): React.ReactElement => {
     border: 1px solid ${({ theme }) => theme.colors.background};
     font-family: ${({ theme }) => theme.fonts.fontFamily};
     font-size: 14px;
-  `;
+  `
 
   const icons: IconTypes[] = [
     'add',
@@ -110,7 +110,7 @@ export const Icons = (): React.ReactElement => {
     'unlocked',
     'userEdit',
     'wallet',
-  ];
+  ]
 
   return (
     <Wrapper>
@@ -121,15 +121,15 @@ export const Icons = (): React.ReactElement => {
         </IconBox>
       ))}
     </Wrapper>
-  );
-};
+  )
+}
 
 export const CustomSize = (): React.ReactElement => (
   <>
     <Icon size="sm" type="add" />
     <Icon size="md" type="add" />
   </>
-);
+)
 
 export const CustomColor = (): React.ReactElement => (
   <>
@@ -137,8 +137,8 @@ export const CustomColor = (): React.ReactElement => (
     <Icon size="md" type="add" color="error" />
     <Icon size="md" type="add" color="rinkeby" />
   </>
-);
+)
 
 export const WithTooltip = (): React.ReactElement => (
   <Icon size="md" type="add" color="primary" tooltip="some text" />
-);
+)

@@ -1,8 +1,8 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from 'react'
+import styled from 'styled-components'
 
-import { Icon } from '../..';
-import { ExplorerInfo } from '../../typings/misc';
+import { Icon } from '../..'
+import { ExplorerInfo } from '../../typings/misc'
 
 const StyledLink = styled.a`
   background: none;
@@ -22,28 +22,28 @@ const StyledLink = styled.a`
   :hover {
     background-color: ${({ theme }) => theme.colors.inputField};
   }
-`;
+`
 
 type Props = {
-  className?: string;
-  explorerUrl: ExplorerInfo;
-};
+  className?: string
+  explorerUrl: ExplorerInfo
+}
 
 const ExplorerButton = ({
   className,
   explorerUrl,
 }: Props): React.ReactElement => {
-  const { url, alt } = explorerUrl();
+  const { url, alt } = explorerUrl()
   const onClick = (event: React.MouseEvent<HTMLAnchorElement>): void => {
-    event.stopPropagation();
-  };
+    event.stopPropagation()
+  }
 
   const onKeyDown = (event: React.KeyboardEvent<HTMLAnchorElement>): void => {
     // prevents event from bubbling when `Enter` is pressed
     if (event.keyCode === 13) {
-      event.stopPropagation();
+      event.stopPropagation()
     }
-  };
+  }
 
   return (
     <StyledLink
@@ -56,7 +56,7 @@ const ExplorerButton = ({
       onKeyDown={onKeyDown}>
       <Icon size="sm" color="icon" type="externalLink" tooltip={alt} />
     </StyledLink>
-  );
-};
+  )
+}
 
-export default ExplorerButton;
+export default ExplorerButton

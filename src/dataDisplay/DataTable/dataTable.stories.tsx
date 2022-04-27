@@ -1,6 +1,6 @@
-import React from 'react';
-import { GridDensityTypes, GridRowsProp } from '@mui/x-data-grid';
-import DataTable from './index';
+import React from 'react'
+import { GridDensityTypes, GridRowsProp } from '@mui/x-data-grid'
+import DataTable from './index'
 
 export default {
   title: 'Data Display/Data Table',
@@ -15,7 +15,7 @@ export default {
       },
     },
   },
-};
+}
 
 const COLUMN_CONFIG = [
   {
@@ -34,14 +34,14 @@ const COLUMN_CONFIG = [
     headerName: 'Value',
     flex: 1,
   },
-];
+]
 
 const randomIntFromInterval = (min: number, max: number): number => {
-  return Math.floor(Math.random() * (max - min + 1) + min);
-};
+  return Math.floor(Math.random() * (max - min + 1) + min)
+}
 
 const generateTestData = (howMany: number): GridRowsProp => {
-  const testData = [];
+  const testData = []
 
   for (let index = 0; index < howMany; index++) {
     testData.push({
@@ -49,11 +49,11 @@ const generateTestData = (howMany: number): GridRowsProp => {
       asset: `Token ${index}`,
       amount: randomIntFromInterval(1, 100),
       value: `$${randomIntFromInterval(0, 10000)}`,
-    });
+    })
   }
 
-  return testData;
-};
+  return testData
+}
 
 export const DataGrid = (): React.ReactElement => {
   return (
@@ -65,8 +65,8 @@ export const DataGrid = (): React.ReactElement => {
       autoHeight
       density={GridDensityTypes.Comfortable}
     />
-  );
-};
+  )
+}
 
 export const PaginatedDataGrid = (): React.ReactElement => {
   return (
@@ -80,5 +80,5 @@ export const PaginatedDataGrid = (): React.ReactElement => {
       autoHeight
       density={GridDensityTypes.Comfortable}
     />
-  );
-};
+  )
+}

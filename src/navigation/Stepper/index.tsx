@@ -1,37 +1,37 @@
-import React from 'react';
-import StepperMUI from '@material-ui/core/Stepper';
-import StepMUI from '@material-ui/core/Step';
-import StepLabelMUI from '@material-ui/core/StepLabel';
-import styled from 'styled-components';
+import React from 'react'
+import StepperMUI from '@material-ui/core/Stepper'
+import StepMUI from '@material-ui/core/Step'
+import StepLabelMUI from '@material-ui/core/StepLabel'
+import styled from 'styled-components'
 
-import DotStep from './DotStep';
+import DotStep from './DotStep'
 
 const StyledStepLabel = styled.p<any>`
   && {
     color: ${({ theme, error, index, activeStepIndex }) => {
       if (error) {
-        return theme.colors.error;
+        return theme.colors.error
       }
 
       if (index === activeStepIndex) {
-        return theme.colors.primary;
+        return theme.colors.primary
       }
 
       if (index < activeStepIndex) {
-        return theme.colors.disabled;
+        return theme.colors.disabled
       }
 
-      return theme.colors.secondary;
+      return theme.colors.secondary
     }};
   }
-`;
+`
 
 type Props = {
-  steps: Array<{ id: string; label: string }>;
-  activeStepIndex: number;
-  error?: boolean;
-  orientation: 'vertical' | 'horizontal';
-};
+  steps: Array<{ id: string; label: string }>
+  activeStepIndex: number
+  error?: boolean
+  orientation: 'vertical' | 'horizontal'
+}
 
 const Stepper = ({
   steps,
@@ -60,10 +60,10 @@ const Stepper = ({
               </StyledStepLabel>
             </StepLabelMUI>
           </StepMUI>
-        );
+        )
       })}
     </StepperMUI>
-  );
-};
+  )
+}
 
-export default Stepper;
+export default Stepper

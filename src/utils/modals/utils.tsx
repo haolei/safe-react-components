@@ -1,7 +1,7 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from 'react'
+import styled from 'styled-components'
 
-import { Button } from '../../index';
+import { Button } from '../../index'
 
 const FooterWrapper = styled.div`
   display: flex;
@@ -12,15 +12,15 @@ const FooterWrapper = styled.div`
   button:first-child {
     margin-right: 16px;
   }
-`;
+`
 
 type Props = {
-  okText?: string;
-  cancelText?: string;
-  okDisabled?: boolean;
-  handleOk: () => void;
-  handleCancel: () => void;
-};
+  okText?: string
+  cancelText?: string
+  okDisabled?: boolean
+  handleOk: () => void
+  handleCancel: () => void
+}
 
 export const ModalFooterConfirmation = ({
   cancelText = 'Cancel',
@@ -47,5 +47,5 @@ export const ModalFooterConfirmation = ({
         {okText}
       </Button>
     </FooterWrapper>
-  );
-};
+  )
+}

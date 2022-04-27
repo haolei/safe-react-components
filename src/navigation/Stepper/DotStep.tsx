@@ -1,18 +1,18 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from 'react'
+import styled from 'styled-components'
 
-import { Icon } from '../../index';
+import { Icon } from '../../index'
 
 const Circle = styled.div<{ disabled: boolean; error?: boolean }>`
   background-color: ${({ disabled, error, theme }) => {
     if (error) {
-      return theme.colors.error;
+      return theme.colors.error
     }
     if (disabled) {
-      return theme.colors.secondaryLight;
+      return theme.colors.secondaryLight
     }
 
-    return theme.colors.primary;
+    return theme.colors.primary
   }};
   color: ${({ theme }) => theme.colors.background};
   width: 24px;
@@ -25,13 +25,13 @@ const Circle = styled.div<{ disabled: boolean; error?: boolean }>`
   svg {
     margin-top: 4px;
   }
-`;
+`
 
 type Props = {
-  dotIndex: number;
-  currentIndex: number;
-  error?: boolean;
-};
+  dotIndex: number
+  currentIndex: number
+  error?: boolean
+}
 const DotStep = ({
   currentIndex,
   dotIndex,
@@ -45,7 +45,7 @@ const DotStep = ({
         dotIndex + 1
       )}
     </Circle>
-  );
-};
+  )
+}
 
-export default DotStep;
+export default DotStep

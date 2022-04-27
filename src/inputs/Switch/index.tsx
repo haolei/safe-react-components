@@ -1,7 +1,7 @@
-import React from 'react';
-import SwitchMui from '@material-ui/core/Switch';
-import styled from 'styled-components';
-import { alpha } from '@material-ui/core/styles';
+import React from 'react'
+import SwitchMui from '@material-ui/core/Switch'
+import styled from 'styled-components'
+import { alpha } from '@material-ui/core/styles'
 
 const StyledSwitch = styled(({ ...rest }) => <SwitchMui {...rest} />)`
   && {
@@ -19,17 +19,17 @@ const StyledSwitch = styled(({ ...rest }) => <SwitchMui {...rest} />)`
       background-color: ${({ theme }) => theme.colors.primaryLight};
     }
   }
-`;
+`
 
 type Props = {
-  checked: boolean;
-  onChange: (checked: boolean) => void;
-};
+  checked: boolean
+  onChange: (checked: boolean) => void
+}
 
 const Switch = ({ checked, onChange }: Props): React.ReactElement => {
-  const onSwitchChange = (_event: any, checked: boolean) => onChange(checked);
+  const onSwitchChange = (_event: any, checked: boolean) => onChange(checked)
 
-  return <StyledSwitch checked={checked} onChange={onSwitchChange} />;
-};
+  return <StyledSwitch checked={checked} onChange={onSwitchChange} />
+}
 
-export default Switch;
+export default Switch

@@ -1,21 +1,21 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from 'react'
 import TextFieldMui, {
   StandardTextFieldProps,
   TextFieldProps,
-} from '@material-ui/core/TextField';
-import { InputBaseProps, InputAdornment } from '@material-ui/core';
-import styled from 'styled-components';
+} from '@material-ui/core/TextField'
+import { InputBaseProps, InputAdornment } from '@material-ui/core'
+import styled from 'styled-components'
 
 type Props = Omit<TextFieldProps, 'InputProps' | 'variant' | 'error'> & {
-  readOnly?: boolean;
-  startAdornment?: React.ReactElement;
-  endAdornment?: React.ReactElement;
-  input?: Omit<StandardTextFieldProps['inputProps'], 'onChange'>;
+  readOnly?: boolean
+  startAdornment?: React.ReactElement
+  endAdornment?: React.ReactElement
+  input?: Omit<StandardTextFieldProps['inputProps'], 'onChange'>
   // Final Form 'FieldProps' types: https://final-form.org/docs/react-final-form/types/FieldProps
   meta?: {
-    error?: string;
-  };
-};
+    error?: string
+  }
+}
 
 const CustomTextField = styled((props: TextFieldProps) => (
   <TextFieldMui {...props} />
@@ -42,7 +42,7 @@ const CustomTextField = styled((props: TextFieldProps) => (
           meta?.error ? theme.colors.error : theme.colors.primary};
     }
   }
-`;
+`
 
 /**
  * @deprecated This TextField Component is coupled to React Final Form use TextFieldInput instead
@@ -64,13 +64,13 @@ function TextField({
       <InputAdornment position="end">{endAdornment}</InputAdornment>
     ) : null,
     readOnly,
-  };
+  }
 
   useEffect(() => {
     if (process.env.NODE_ENV === 'development') {
-      console.warn('TextField is deprecated, use TextFieldInput instead');
+      console.warn('TextField is deprecated, use TextFieldInput instead')
     }
-  }, []);
+  }, [])
 
   return (
     <CustomTextField
@@ -82,7 +82,7 @@ function TextField({
       color="primary"
       variant="filled"
     />
-  );
+  )
 }
 
-export default TextField;
+export default TextField

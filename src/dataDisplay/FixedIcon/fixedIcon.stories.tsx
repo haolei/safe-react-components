@@ -1,7 +1,7 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from 'react'
+import styled from 'styled-components'
 
-import FixedIcon, { IconTypes } from './index';
+import FixedIcon, { IconTypes } from './index'
 
 export default {
   title: 'Data Display/FixedIcon',
@@ -10,12 +10,12 @@ export default {
     componentSubtitle: `Components that renders an icon customized for Safe Multisig app, this icon is not 
      customizable by props. If you need generic purposes Icons, try Icon component.`,
   },
-};
+}
 
 const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-`;
+`
 
 const IconBox = styled.div`
   display: flex;
@@ -28,7 +28,7 @@ const IconBox = styled.div`
   border: 1px solid ${({ theme }) => theme.colors.background};
   font-family: ${({ theme }) => theme.fonts.fontFamily};
   font-size: 14px;
-`;
+`
 
 export const Icons = (): React.ReactElement => {
   const icons: IconTypes[] = [
@@ -51,7 +51,7 @@ export const Icons = (): React.ReactElement => {
     'notOwner',
     'notConnected',
     'networkError',
-  ];
+  ]
 
   return (
     <Wrapper>
@@ -62,16 +62,16 @@ export const Icons = (): React.ReactElement => {
         </IconBox>
       ))}
     </Wrapper>
-  );
-};
+  )
+}
 
 export const IconsWhite = (): React.ReactElement => {
   const GreenBoxColor = styled(IconBox)`
     background-color: ${({ theme }) => theme.colors.primary};
     color: white;
-  `;
+  `
 
-  const iconsWhite: IconTypes[] = ['arrowSentWhite', 'arrowReceivedWhite'];
+  const iconsWhite: IconTypes[] = ['arrowSentWhite', 'arrowReceivedWhite']
 
   return (
     <Wrapper>
@@ -82,5 +82,5 @@ export const IconsWhite = (): React.ReactElement => {
         </GreenBoxColor>
       ))}
     </Wrapper>
-  );
-};
+  )
+}

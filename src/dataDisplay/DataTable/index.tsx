@@ -1,13 +1,13 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import { DataGrid as DataGridMui, DataGridProps } from '@mui/x-data-grid';
-import theme from '../../theme';
+import React from 'react'
+import { makeStyles } from '@material-ui/core/styles'
+import { DataGrid as DataGridMui, DataGridProps } from '@mui/x-data-grid'
+import theme from '../../theme'
 
 const DataTable = (props: DataGridProps): React.ReactElement => {
-  const classes = useStyles();
+  const classes = useStyles()
 
-  return <DataGridMui classes={classes} {...props} />;
-};
+  return <DataGridMui classes={classes} {...props} />
+}
 
 const useStyles = makeStyles({
   row: {
@@ -33,6 +33,6 @@ const useStyles = makeStyles({
       color: theme.colors.primary,
     },
   },
-});
+})
 
-export default DataTable;
+export default DataTable

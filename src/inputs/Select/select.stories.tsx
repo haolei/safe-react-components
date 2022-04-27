@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { Story } from '@storybook/react';
-import Select, { SelectItem } from './';
-import { SelectInputProps } from '@material-ui/core/Select/SelectInput';
+import React, { useState } from 'react'
+import { Story } from '@storybook/react'
+import Select, { SelectItem } from './'
+import { SelectInputProps } from '@material-ui/core/Select/SelectInput'
 
 const items: Array<SelectItem> = [
   {
@@ -13,7 +13,7 @@ const items: Array<SelectItem> = [
   { id: '2', label: 'GNO', iconUrl: 'https://via.placeholder.com/128x128' },
   { id: '3', label: 'BrokenImage', iconUrl: 'https://broken-image.test' },
   { id: '4', label: 'without icon' },
-];
+]
 
 export default {
   title: 'Inputs/Select',
@@ -28,12 +28,12 @@ export default {
       </div>
     ),
   ],
-};
+}
 
 export const SimpleSelect: Story<SelectInputProps> = (
   args
 ): React.ReactElement => {
-  const [activeItemId, setActiveItemId] = useState('');
+  const [activeItemId, setActiveItemId] = useState('')
 
   return (
     <Select
@@ -43,17 +43,17 @@ export const SimpleSelect: Story<SelectInputProps> = (
       items={items}
       activeItemId={activeItemId}
       fullWidth
-      onItemClick={(id) => {
-        setActiveItemId(id);
+      onItemClick={id => {
+        setActiveItemId(id)
       }}
       fallbackImage={'https://via.placeholder.com/32x32'} // image source or URL
       {...args}
     />
-  );
-};
+  )
+}
 
 export const ErrorSelect = (): React.ReactElement => {
-  const [activeItemId, setActiveItemId] = useState('');
+  const [activeItemId, setActiveItemId] = useState('')
 
   return (
     <Select
@@ -64,16 +64,16 @@ export const ErrorSelect = (): React.ReactElement => {
       helperText="Something went wrong"
       items={items}
       activeItemId={activeItemId}
-      onItemClick={(id) => {
-        setActiveItemId(id);
+      onItemClick={id => {
+        setActiveItemId(id)
       }}
       fallbackImage={'https://via.placeholder.com/32x32'} // image source or URL
     />
-  );
-};
+  )
+}
 
 export const DisabledSelect = (): React.ReactElement => {
-  const [activeItemId, setActiveItemId] = useState('');
+  const [activeItemId, setActiveItemId] = useState('')
 
   return (
     <Select
@@ -84,10 +84,10 @@ export const DisabledSelect = (): React.ReactElement => {
       fullWidth
       items={items}
       activeItemId={activeItemId}
-      onItemClick={(id) => {
-        setActiveItemId(id);
+      onItemClick={id => {
+        setActiveItemId(id)
       }}
       fallbackImage={'https://via.placeholder.com/32x32'} // image source or URL
     />
-  );
-};
+  )
+}

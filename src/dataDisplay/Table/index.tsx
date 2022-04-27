@@ -1,18 +1,18 @@
-import React from 'react';
-import TableMui from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableSortLabel from '@material-ui/core/TableSortLabel';
-import TableCell from '@material-ui/core/TableCell';
-import TableContainer from '@material-ui/core/TableContainer';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
-import Paper from '@material-ui/core/Paper';
-import Box from '@material-ui/core/Box';
-import Collapse from '@material-ui/core/Collapse';
+import React from 'react'
+import TableMui from '@material-ui/core/Table'
+import TableBody from '@material-ui/core/TableBody'
+import TableSortLabel from '@material-ui/core/TableSortLabel'
+import TableCell from '@material-ui/core/TableCell'
+import TableContainer from '@material-ui/core/TableContainer'
+import TableHead from '@material-ui/core/TableHead'
+import TableRow from '@material-ui/core/TableRow'
+import Paper from '@material-ui/core/Paper'
+import Box from '@material-ui/core/Box'
+import Collapse from '@material-ui/core/Collapse'
 
 //import styled from 'styled-components';
 
-import { FixedIcon } from '../..';
+import { FixedIcon } from '../..'
 
 // const TextTHead = styled(Text)`
 //   text-transform: uppercase;
@@ -34,44 +34,44 @@ export enum TableSortDirection {
 }
 
 export type TableHeader = {
-  id: string;
-  alignment?: TableAlignment;
-  label: string;
-  hideSortIcon?: boolean;
-};
+  id: string
+  alignment?: TableAlignment
+  label: string
+  hideSortIcon?: boolean
+}
 
 type RowCells = {
-  id?: string;
-  alignment?: TableAlignment;
-  content: React.ReactNode;
-};
+  id?: string
+  alignment?: TableAlignment
+  content: React.ReactNode
+}
 
 export type TableRow = {
-  id: string;
-  collapsibleContent?: React.ReactNode;
-  cells: RowCells[];
-};
+  id: string
+  collapsibleContent?: React.ReactNode
+  cells: RowCells[]
+}
 
 type Props = {
-  rows: TableRow[];
-  headers?: TableHeader[];
-  isCollapsible?: boolean;
-  className?: string;
-  selectedRowIds?: Set<string>;
-  sortedByHeaderId?: string;
-  sortDirection?: TableSortDirection;
-  onHeaderClick?: (id: string) => void;
-  onRowClick?: (id: string) => void;
-  isStickyHeader?: boolean;
-  maxHeight?: number;
-};
+  rows: TableRow[]
+  headers?: TableHeader[]
+  isCollapsible?: boolean
+  className?: string
+  selectedRowIds?: Set<string>
+  sortedByHeaderId?: string
+  sortDirection?: TableSortDirection
+  onHeaderClick?: (id: string) => void
+  onRowClick?: (id: string) => void
+  isStickyHeader?: boolean
+  maxHeight?: number
+}
 
 const getHeaders = (
   headers: TableHeader[],
   isCollapsible: boolean
 ): TableHeader[] => {
   if (!isCollapsible) {
-    return headers;
+    return headers
   }
 
   return [
@@ -80,8 +80,8 @@ const getHeaders = (
       id: 'chevron',
       label: '',
     },
-  ];
-};
+  ]
+}
 
 const getRowCells = (
   cells: RowCells[],
@@ -89,7 +89,7 @@ const getRowCells = (
   isCollapsible: boolean
 ): RowCells[] => {
   if (!isCollapsible) {
-    return cells;
+    return cells
   }
 
   return [
@@ -102,8 +102,8 @@ const getRowCells = (
         <FixedIcon type="chevronDown" />
       ),
     },
-  ];
-};
+  ]
+}
 
 export const Table = ({
   rows,
@@ -127,7 +127,7 @@ export const Table = ({
       {headers && (
         <TableHead>
           <TableRow>
-            {getHeaders(headers || [], isCollapsible).map((header) => (
+            {getHeaders(headers || [], isCollapsible).map(header => (
               <TableCell
                 key={header.id}
                 align={header.alignment || TableAlignment.left}>
@@ -150,12 +150,12 @@ export const Table = ({
 
       {/* TABLE BODY */}
       <TableBody>
-        {rows.map((row) => {
+        {rows.map(row => {
           const rowCells = getRowCells(
             row.cells,
             selectedRowIds.has(row.id),
             isCollapsible
-          );
+          )
 
           return (
             <React.Fragment key={row.id}>
@@ -188,9 +188,9 @@ export const Table = ({
                 </TableRow>
               )}
             </React.Fragment>
-          );
+          )
         })}
       </TableBody>
     </TableMui>
   </TableContainer>
-);
+)

@@ -1,6 +1,6 @@
-import React from 'react';
+import React from 'react'
 
-import Identicon from './index';
+import Identicon from './index'
 
 export default {
   title: 'Utils/Identicon',
@@ -8,7 +8,7 @@ export default {
   parameters: {
     componentSubtitle: 'Identicon Component.',
   },
-};
+}
 
 export const sizes = (): React.ReactElement => {
   return (
@@ -20,5 +20,5 @@ export const sizes = (): React.ReactElement => {
       <Identicon address="thisIsAnExample" size="xl" />
       <Identicon address="thisIsAnExample" size="xxl" />
     </>
-  );
-};
+  )
+}

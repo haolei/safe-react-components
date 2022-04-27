@@ -1,46 +1,46 @@
-import React, { ReactElement } from 'react';
-import TabMui, { TabProps } from '@material-ui/core/Tab';
-import TabsMui, { TabsProps } from '@material-ui/core/Tabs';
-import { withStyles } from '@material-ui/core/styles';
-import styled from 'styled-components';
+import React, { ReactElement } from 'react'
+import TabMui, { TabProps } from '@material-ui/core/Tab'
+import TabsMui, { TabsProps } from '@material-ui/core/Tabs'
+import { withStyles } from '@material-ui/core/styles'
+import styled from 'styled-components'
 
-import theme from '../../theme';
-import { IconType } from '../../dataDisplay/Icon';
-import IconText from '../../dataDisplay/IconText';
-import Text from '../../dataDisplay/Text';
+import theme from '../../theme'
+import { IconType } from '../../dataDisplay/Icon'
+import IconText from '../../dataDisplay/IconText'
+import Text from '../../dataDisplay/Text'
 
 export type Item = {
-  id: string;
-  icon?: keyof IconType;
-  label: string;
-  customContent?: ReactElement;
-  disabled?: boolean;
-};
+  id: string
+  icon?: keyof IconType
+  label: string
+  customContent?: ReactElement
+  disabled?: boolean
+}
 
-type Variant = 'outlined' | 'contained';
+type Variant = 'outlined' | 'contained'
 
 export type Props = {
-  onChange: (selectedIndex: string) => void;
-  items: Array<Item>;
-  selectedTab: string;
-  variant?: Variant;
-  fullWidth?: boolean;
-};
+  onChange: (selectedIndex: string) => void
+  items: Array<Item>
+  selectedTab: string
+  variant?: Variant
+  fullWidth?: boolean
+}
 
 const TabWrapper = styled.div<{ variant: Variant }>`
   box-shadow: ${({ variant, theme }) =>
     variant === 'outlined'
       ? 'inset 0 -2px 0' + theme.colors.overlay.color
       : 'none'};
-`;
+`
 
 type CustomTabsProps = TabsProps<
   React.ElementType,
   {
-    variantStyle: string;
-    children: React.ReactNode;
+    variantStyle: string
+    children: React.ReactNode
   }
->;
+>
 
 const CustomTabs = ({ variantStyle, ...rest }: CustomTabsProps) => {
   const CustomTabsMui = withStyles({
@@ -59,17 +59,17 @@ const CustomTabs = ({ variantStyle, ...rest }: CustomTabsProps) => {
         textAlign: 'left',
       },
     },
-  })(TabsMui);
+  })(TabsMui)
 
-  return <CustomTabsMui {...rest} />;
-};
+  return <CustomTabsMui {...rest} />
+}
 
 type CustomTabProps = TabProps<
   React.ElementType,
   {
-    variantStyle: string;
+    variantStyle: string
   }
->;
+>
 
 const CustomTab = ({ variantStyle, ...rest }: CustomTabProps) => {
   const CustomTabMui = withStyles({
@@ -87,10 +87,10 @@ const CustomTab = ({ variantStyle, ...rest }: CustomTabProps) => {
       },
       textTransform: variantStyle === 'contained' ? 'capitalize' : 'uppercase',
     },
-  })(TabMui);
+  })(TabMui)
 
-  return <CustomTabMui {...rest} />;
-};
+  return <CustomTabMui {...rest} />
+}
 
 const Tab = ({
   onChange,
@@ -103,12 +103,12 @@ const Tab = ({
     _event: React.ChangeEvent<unknown>,
     value: string
   ): void => {
-    onChange(value);
-  };
+    onChange(value)
+  }
 
   const getLabel = (item: Item) => {
     if (item.customContent) {
-      return item.customContent;
+      return item.customContent
     }
 
     if (item.icon) {
@@ -121,15 +121,15 @@ const Tab = ({
           color={selectedTab === item.id ? 'primary' : 'text'}
           text={item.label}
         />
-      );
+      )
     }
 
     return (
       <Text color="text" size="sm">
         {item.label}{' '}
       </Text>
-    );
-  };
+    )
+  }
 
   return (
     <TabWrapper variant={variant}>
@@ -138,7 +138,7 @@ const Tab = ({
         value={selectedTab}
         onChange={handleChange}
         variantStyle={variant}>
-        {items.map((item) => (
+        {items.map(item => (
           <CustomTab
             key={item.id}
             label={getLabel(item)}
@@ -149,7 +149,7 @@ const Tab = ({
         ))}
       </CustomTabs>
     </TabWrapper>
-  );
-};
+  )
+}
 
-export default Tab;
+export default Tab

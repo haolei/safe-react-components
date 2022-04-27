@@ -1,50 +1,50 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement } from 'react'
 import MUITooltip, {
   TooltipProps as TooltipPropsMui,
-} from '@material-ui/core/Tooltip';
-import { withStyles, alpha } from '@material-ui/core/styles';
+} from '@material-ui/core/Tooltip'
+import { withStyles, alpha } from '@material-ui/core/styles'
 
-import theme, { ThemeColors, ThemeTooltipSize } from '../../theme';
+import theme, { ThemeColors, ThemeTooltipSize } from '../../theme'
 
 type TooltipProps = {
-  size?: ThemeTooltipSize;
-  backgroundColor?: ThemeColors;
-  textColor?: ThemeColors;
-  padding?: string;
-  border?: string;
-};
+  size?: ThemeTooltipSize
+  backgroundColor?: ThemeColors
+  textColor?: ThemeColors
+  padding?: string
+  border?: string
+}
 
 const getPaddingBySize = (size: ThemeTooltipSize): string => {
   switch (size) {
     case 'lg':
-      return '8px 16px';
+      return '8px 16px'
     default:
-      return '4px 8px';
+      return '4px 8px'
   }
-};
+}
 
 const getBorderBySize = (size: ThemeTooltipSize): string => {
   switch (size) {
     case 'lg':
-      return 'none';
+      return 'none'
     default:
-      return `1px solid ${theme.colors.icon}`;
+      return `1px solid ${theme.colors.icon}`
   }
-};
+}
 
 const getFontInfoBySize = (
   size: ThemeTooltipSize
 ): {
-  fontSize: string;
-  lineHeight: string;
+  fontSize: string
+  lineHeight: string
 } => {
   switch (size) {
     case 'lg':
-      return theme.text.size.lg;
+      return theme.text.size.lg
     default:
-      return theme.text.size.md;
+      return theme.text.size.md
   }
-};
+}
 
 const customTooltip = ({
   backgroundColor,
@@ -80,12 +80,12 @@ const customTooltip = ({
         boxShadow: `1px 2px 10px ${alpha(theme.colors.shadow.color, 0.18)}`,
       },
     },
-  }))(MUITooltip);
+  }))(MUITooltip)
 
 type Props = {
-  title: string;
-  children: ReactElement;
-} & TooltipProps;
+  title: string
+  children: ReactElement
+} & TooltipProps
 
 export const Tooltip = ({
   title,
@@ -99,11 +99,11 @@ export const Tooltip = ({
     backgroundColor,
     textColor,
     size,
-  });
+  })
 
   return (
     <StyledTooltip title={title} {...rest}>
       {children}
     </StyledTooltip>
-  );
-};
+  )
+}

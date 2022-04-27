@@ -1,6 +1,6 @@
-import React from 'react';
+import React from 'react'
 
-import Title from './index';
+import Title from './index'
 
 export default {
   title: 'Data Display/Title',
@@ -8,11 +8,11 @@ export default {
   parameters: {
     componentSubtitle: 'Title Component.',
   },
-};
+}
 
 export const SimpleTitle = (): React.ReactElement => (
   <Title size="lg">Title LG</Title>
-);
+)
 
 export const WithSizes = (): React.ReactElement => {
   return (
@@ -23,8 +23,8 @@ export const WithSizes = (): React.ReactElement => {
       <Title size="sm">Title SM</Title>
       <Title size="xs">Title XS</Title>
     </>
-  );
-};
+  )
+}
 
 export const Bold = (): React.ReactElement => (
   <>
@@ -35,4 +35,4 @@ export const Bold = (): React.ReactElement => (
       Title MD
     </Title>
   </>
-);
+)

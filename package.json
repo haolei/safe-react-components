@@ -17,7 +17,7 @@
     "build-storybook": "build-storybook --docs",
     "storybook": "start-storybook -p 9009 --docs",
     "lint:check": "eslint './src/**/*.{js,jsx,ts,tsx}'",
-    "prettier": "prettier -w",
+    "prettier": "prettier --write './src/**/*.{js,jsx,ts,tsx}'",
     "test": "jest tests/storybook.test.js",
     "test:ci": "yarn test --ci --coverage --json --watchAll=false --testLocationInResults --runInBand",
     "prepare": "yarn build"
@@ -56,7 +56,7 @@
     "@typescript-eslint/parser": "^4.31.0",
     "copy-webpack-plugin": "^6.3.0",
     "eslint": "^7.32.0",
-    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.27.1",
     "eslint-plugin-react-hooks": "^4.3.0",
@@ -65,7 +65,7 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^26.6.3",
     "jest-styled-components": "^7.0.6",
-    "prettier": "^2.4.1",
+    "prettier": "^2.6.2",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-qr-reader": "2.2.1",
@@ -85,9 +85,6 @@
     "react": "16.x.x || 17.x.x",
     "react-dom": "16.x.x || 17.x.x",
     "styled-components": "5.x.x"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
   },
   "browserslist": {
     "production": [

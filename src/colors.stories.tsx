@@ -1,21 +1,21 @@
-import React from 'react';
-import styled from 'styled-components';
-import { getLuminance } from '@material-ui/core/styles/colorManipulator';
+import React from 'react'
+import styled from 'styled-components'
+import { getLuminance } from '@material-ui/core/styles/colorManipulator'
 
-import { Text, theme } from './index';
+import { Text, theme } from './index'
 
 const Grid = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-`;
+`
 
 const ColorWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin: 16px;
-`;
+`
 
 const ColorDisplay = styled.div<{ color: string }>`
   margin: 8px auto;
@@ -23,11 +23,11 @@ const ColorDisplay = styled.div<{ color: string }>`
   height: 100px;
   border: 1px solid #000000;
   background-color: ${({ color }) => color};
-`;
+`
 
 export default {
   title: 'Utils/Colors',
-};
+}
 
 export const ColorsSample = (): React.ReactElement => {
   const colors = Object.keys(theme.colors)
@@ -38,14 +38,14 @@ export const ColorsSample = (): React.ReactElement => {
           code: (
             (theme.colors as Record<string, unknown>)[name] as string
           ).toUpperCase(),
-        });
+        })
       }
-      return acc;
+      return acc
     }, [])
     .sort(
       ({ code: colorA }, { code: colorB }) =>
         getLuminance(colorA) - getLuminance(colorB)
-    );
+    )
 
   return (
     <Grid>
@@ -61,5 +61,5 @@ export const ColorsSample = (): React.ReactElement => {
         </ColorWrapper>
       ))}
     </Grid>
-  );
-};
+  )
+}

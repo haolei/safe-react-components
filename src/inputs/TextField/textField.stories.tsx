@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 
-import TextField from './index';
-import { Icon } from '../../dataDisplay';
+import TextField from './index'
+import { Icon } from '../../dataDisplay'
 
 export default {
   title: 'Inputs/TextField',
@@ -9,41 +9,41 @@ export default {
   parameters: {
     componentSubtitle: 'Text field input with several variants',
   },
-};
+}
 
-const onSubmit = (e: React.FormEvent) => e.preventDefault();
+const onSubmit = (e: React.FormEvent) => e.preventDefault()
 
 export const SimpleTextField = (): React.ReactElement => {
-  const [value, setValue] = useState<string>('');
+  const [value, setValue] = useState<string>('')
   return (
     <form noValidate autoComplete="off" onSubmit={onSubmit}>
       <TextField
         id="standard-name"
         label="Name"
         value={value}
-        onChange={(e) => setValue(e.target.value)}
+        onChange={e => setValue(e.target.value)}
       />
     </form>
-  );
-};
+  )
+}
 
 export const SimpleNumberField = (): React.ReactElement => {
-  const [value, setValue] = useState<string>('');
+  const [value, setValue] = useState<string>('')
   return (
     <form noValidate autoComplete="off" onSubmit={onSubmit}>
       <TextField
         id="standard-name"
         label="Name"
         value={value}
-        onChange={(e) => setValue(e.target.value)}
+        onChange={e => setValue(e.target.value)}
         input={{ type: 'number', min: 5, max: 10, step: 1 }}
       />
     </form>
-  );
-};
+  )
+}
 
 export const Error = (): React.ReactElement => {
-  const [value, setValue] = useState<string>('some incorrect value');
+  const [value, setValue] = useState<string>('some incorrect value')
   return (
     <form noValidate autoComplete="off" onSubmit={onSubmit}>
       <TextField
@@ -51,14 +51,14 @@ export const Error = (): React.ReactElement => {
         label="Name"
         value={value}
         meta={{ error: 'Some error' }}
-        onChange={(e) => setValue(e.target.value)}
+        onChange={e => setValue(e.target.value)}
       />
     </form>
-  );
-};
+  )
+}
 
 export const ReadOnly = (): React.ReactElement => {
-  const [value, setValue] = useState<string>('some value readOnly');
+  const [value, setValue] = useState<string>('some value readOnly')
   return (
     <form noValidate autoComplete="off" onSubmit={onSubmit}>
       <TextField
@@ -66,15 +66,15 @@ export const ReadOnly = (): React.ReactElement => {
         label="Name"
         readOnly
         value={value}
-        onChange={(e) => setValue(e.target.value)}
+        onChange={e => setValue(e.target.value)}
       />
     </form>
-  );
-};
+  )
+}
 
 export const StartAdornment = (): React.ReactElement => {
-  const [value, setValue] = useState('');
-  const adornment = <Icon size="md" type="assets" />;
+  const [value, setValue] = useState('')
+  const adornment = <Icon size="md" type="assets" />
   return (
     <form noValidate autoComplete="off" onSubmit={onSubmit}>
       <TextField
@@ -87,12 +87,12 @@ export const StartAdornment = (): React.ReactElement => {
         startAdornment={adornment}
       />
     </form>
-  );
-};
+  )
+}
 
 export const EndAdornment = (): React.ReactElement => {
-  const [value, setValue] = useState('');
-  const adornment = <Icon size="md" type="assets" />;
+  const [value, setValue] = useState('')
+  const adornment = <Icon size="md" type="assets" />
   return (
     <form noValidate autoComplete="off" onSubmit={onSubmit}>
       <TextField
@@ -105,5 +105,5 @@ export const EndAdornment = (): React.ReactElement => {
         endAdornment={adornment}
       />
     </form>
-  );
-};
+  )
+}

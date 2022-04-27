@@ -1,7 +1,7 @@
-import React from 'react';
+import React from 'react'
 
-import Menu from './index';
-import { ButtonLink } from '../../index';
+import Menu from './index'
+import { ButtonLink } from '../../index'
 
 export default {
   title: 'navigation/Menu',
@@ -9,7 +9,7 @@ export default {
   parameters: {
     componentSubtitle: 'Menu component used in Safe Multisig.',
   },
-};
+}
 
 export const Loader = (): React.ReactElement => (
   <Menu>
@@ -18,4 +18,4 @@ export const Loader = (): React.ReactElement => (
       Item 2
     </ButtonLink>
   </Menu>
-);
+)

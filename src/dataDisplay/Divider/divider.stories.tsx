@@ -1,6 +1,6 @@
-import React from 'react';
+import React from 'react'
 
-import Divider from './index';
+import Divider from './index'
 
 export default {
   title: 'Data Display/Divider',
@@ -8,7 +8,7 @@ export default {
   parameters: {
     componentSubtitle: 'Used to separate content.',
   },
-};
+}
 
 export const Horizontal = (): React.ReactElement => (
   <>
@@ -16,7 +16,7 @@ export const Horizontal = (): React.ReactElement => (
     <Divider />
     <div>Some content2</div>
   </>
-);
+)
 
 export const Vertical = (): React.ReactElement => (
   <div
@@ -30,4 +30,4 @@ export const Vertical = (): React.ReactElement => (
     <Divider orientation="vertical" />
     <div>Some content2</div>
   </div>
-);
+)

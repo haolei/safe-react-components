@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
+import React, { useState } from 'react'
+import styled from 'styled-components'
 
 import {
   Text,
@@ -8,75 +8,75 @@ import {
   EllipsisMenuItem,
   ExplorerButton,
   CopyToClipboardBtn,
-} from '../../';
-import { textShortener } from '../../utils/strings';
-import { ThemeTextSize, ThemeColors, ThemeIdenticonSize } from '../../theme';
-import { ExplorerInfo } from '../../typings/misc';
+} from '../../'
+import { textShortener } from '../../utils/strings'
+import { ThemeTextSize, ThemeColors, ThemeIdenticonSize } from '../../theme'
+import { ExplorerInfo } from '../../typings/misc'
 
 const StyledContainer = styled.div`
   display: flex;
   align-items: center;
-`;
+`
 
 const AvatarContainer = styled.div`
   display: flex;
   margin-right: 8px;
-`;
+`
 
 const InfoContainer = styled.div`
   display: flex;
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
-`;
+`
 
 const AddressContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 4px;
-`;
+`
 
 const StyledImg = styled.img<{ size: ThemeIdenticonSize }>`
   height: ${({ size, theme }) => theme.identicon.size[size]};
   width: ${({ size, theme }) => theme.identicon.size[size]};
-`;
+`
 
 type Props = {
-  className?: string;
-  hash: string;
-  showHash?: boolean;
-  shortenHash?: number;
-  name?: string;
-  strongName?: boolean;
-  textColor?: ThemeColors;
-  textSize?: ThemeTextSize;
-  showAvatar?: boolean;
-  customAvatar?: string;
-  customAvatarFallback?: string;
-  avatarSize?: ThemeIdenticonSize;
-  showCopyBtn?: boolean;
-  menuItems?: EllipsisMenuItem[];
-  explorerUrl?: ExplorerInfo;
-};
+  className?: string
+  hash: string
+  showHash?: boolean
+  shortenHash?: number
+  name?: string
+  strongName?: boolean
+  textColor?: ThemeColors
+  textSize?: ThemeTextSize
+  showAvatar?: boolean
+  customAvatar?: string
+  customAvatarFallback?: string
+  avatarSize?: ThemeIdenticonSize
+  showCopyBtn?: boolean
+  menuItems?: EllipsisMenuItem[]
+  explorerUrl?: ExplorerInfo
+}
 
 type ShortNameProps =
   | {
-      shouldShowShortName: boolean;
-      shouldCopyShortName?: boolean;
-      shortName: string;
+      shouldShowShortName: boolean
+      shouldCopyShortName?: boolean
+      shortName: string
     }
   | {
-      shouldShowShortName?: boolean;
-      shouldCopyShortName: boolean;
-      shortName: string;
+      shouldShowShortName?: boolean
+      shouldCopyShortName: boolean
+      shortName: string
     }
   | {
-      shouldShowShortName?: never;
-      shouldCopyShortName?: never;
-      shortName?: string;
-    };
+      shouldShowShortName?: never
+      shouldCopyShortName?: never
+      shortName?: string
+    }
 
-type EthHashInfoProps = Props & ShortNameProps;
+type EthHashInfoProps = Props & ShortNameProps
 
 const EthHashInfo = ({
   hash,
@@ -98,16 +98,16 @@ const EthHashInfo = ({
   shouldShowShortName,
   shouldCopyShortName,
 }: EthHashInfoProps): React.ReactElement => {
-  const [fallbackToIdenticon, setFallbackToIdenticon] = useState(false);
-  const [fallbackSrc, setFallabckSrc] = useState<undefined | string>(undefined);
+  const [fallbackToIdenticon, setFallbackToIdenticon] = useState(false)
+  const [fallbackSrc, setFallabckSrc] = useState<undefined | string>(undefined)
 
   const setAppImageFallback = (): void => {
     if (customAvatarFallback && !fallbackToIdenticon) {
-      setFallabckSrc(customAvatarFallback);
+      setFallabckSrc(customAvatarFallback)
     } else {
-      setFallbackToIdenticon(true);
+      setFallbackToIdenticon(true)
     }
-  };
+  }
 
   return (
     <StyledContainer className={className}>
@@ -154,7 +154,7 @@ const EthHashInfo = ({
         </AddressContainer>
       </InfoContainer>
     </StyledContainer>
-  );
-};
+  )
+}
 
-export default EthHashInfo;
+export default EthHashInfo

@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
+import React, { useState } from 'react'
+import styled from 'styled-components'
 
-import { Icon } from '../..';
-import copyTextToClipboard from './copyTextToClipboard';
+import { Icon } from '../..'
+import copyTextToClipboard from './copyTextToClipboard'
 
 const StyledButton = styled.button`
   background: none;
@@ -22,15 +22,15 @@ const StyledButton = styled.button`
   :hover {
     background-color: ${({ theme }) => theme.colors.separator};
   }
-`;
+`
 
 type Props = {
-  textToCopy: string;
-  className?: string;
-  iconType?: Parameters<typeof Icon>[0]['type'];
-  tooltip?: string;
-  tooltipAfterCopy?: string;
-};
+  textToCopy: string
+  className?: string
+  iconType?: Parameters<typeof Icon>[0]['type']
+  tooltip?: string
+  tooltipAfterCopy?: string
+}
 
 const CopyToClipboardBtn = ({
   className,
@@ -38,29 +38,29 @@ const CopyToClipboardBtn = ({
   iconType = 'copy',
   tooltip = 'Copy to clipboard',
 }: Props): React.ReactElement => {
-  const [clicked, setClicked] = useState<boolean>(false);
+  const [clicked, setClicked] = useState<boolean>(false)
 
   const copy = () => {
-    copyTextToClipboard(textToCopy);
-    setClicked(true);
-  };
+    copyTextToClipboard(textToCopy)
+    setClicked(true)
+  }
 
   const onButtonClick = (event: React.MouseEvent<HTMLButtonElement>): void => {
-    event.stopPropagation();
-    copy();
-  };
+    event.stopPropagation()
+    copy()
+  }
 
   const onKeyDown = (event: React.KeyboardEvent<HTMLButtonElement>): void => {
     // prevents event from bubbling when `Enter` is pressed
     if (event.keyCode === 13) {
-      event.stopPropagation();
+      event.stopPropagation()
     }
-    copy();
-  };
+    copy()
+  }
 
   const onButtonBlur = (): void => {
-    setTimeout((): void => setClicked(false), 300);
-  };
+    setTimeout((): void => setClicked(false), 300)
+  }
 
   return (
     <StyledButton
@@ -76,7 +76,7 @@ const CopyToClipboardBtn = ({
         tooltip={clicked ? 'Copied' : tooltip}
       />
     </StyledButton>
-  );
-};
+  )
+}
 
-export default CopyToClipboardBtn;
+export default CopyToClipboardBtn

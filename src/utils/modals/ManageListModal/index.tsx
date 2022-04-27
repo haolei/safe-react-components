@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
-import { Divider } from '../../../index';
+import React, { useState } from 'react'
+import styled from 'styled-components'
+import { Divider } from '../../../index'
 
 import {
   GenericModal,
@@ -9,7 +9,7 @@ import {
   Button,
   Switch,
   ModalFooterConfirmation,
-} from '../../../index';
+} from '../../../index'
 
 const SearchInput = styled.input`
   border: none;
@@ -21,7 +21,7 @@ const SearchInput = styled.input`
   :focus {
     outline: none;
   }
-`;
+`
 
 const BodyHeader = styled.div`
   display: flex;
@@ -29,14 +29,14 @@ const BodyHeader = styled.div`
   align-items: center;
   border-bottom: 2px solid ${({ theme }) => theme.colors.separator};
   padding: 0 24px;
-`;
+`
 
 const SearchContainer = styled.div`
   display: flex;
   align-items: center;
   height: 52px;
   border-right: 2px solid ${({ theme }) => theme.colors.separator};
-`;
+`
 
 const StyledItem = styled.div`
   display: flex;
@@ -49,32 +49,32 @@ const StyledItem = styled.div`
   :last-child {
     border-bottom: 0px;
   }
-`;
+`
 
 const StyledImage = styled.img`
   width: 26px;
   height: 26px;
   object-fit: contain;
   margin: 0 16px 0 0;
-`;
+`
 
 const StyledImageName = styled.div`
   display: flex;
   align-items: center;
-`;
+`
 
 const FormContainer = styled.div`
   display: flex;
   align-items: center;
   padding: 24px;
-`;
+`
 
 const TextDesc = styled(Text)`
   width: 350px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-`;
+`
 
 const UnstyledButton = styled.button`
   background: none;
@@ -83,32 +83,32 @@ const UnstyledButton = styled.button`
   cursor: pointer;
   padding: 0;
   outline-color: ${({ theme }) => theme.colors.separator};
-`;
+`
 
 const StyledDivider = styled(Divider)`
   height: 30px;
-`;
+`
 
 type Props = {
-  title?: string;
-  defaultIconUrl: string;
-  showDeleteButton?: boolean;
+  title?: string
+  defaultIconUrl: string
+  showDeleteButton?: boolean
   itemList: Array<{
-    id: number | string;
-    iconUrl: string;
-    name: string;
-    description?: string;
-    checked: boolean;
-    isDeletable?: boolean;
-  }>;
-  addButtonLabel?: string;
-  formBody: React.ReactNode;
-  isSubmitFormDisabled?: boolean;
-  onSubmitForm: () => void;
-  onItemToggle: (itemId: number | string, checked: boolean) => void;
-  onItemDeleted?: (itemId: number | string) => void;
-  onClose: () => void;
-};
+    id: number | string
+    iconUrl: string
+    name: string
+    description?: string
+    checked: boolean
+    isDeletable?: boolean
+  }>
+  addButtonLabel?: string
+  formBody: React.ReactNode
+  isSubmitFormDisabled?: boolean
+  onSubmitForm: () => void
+  onItemToggle: (itemId: number | string, checked: boolean) => void
+  onItemDeleted?: (itemId: number | string) => void
+  onClose: () => void
+}
 
 const ManageList = ({
   title = 'Manage List',
@@ -123,25 +123,25 @@ const ManageList = ({
   onItemDeleted,
   onClose,
 }: Props): JSX.Element => {
-  const [search, setSearch] = useState('');
-  const [isFormMode, setIsFormMode] = useState(false);
+  const [search, setSearch] = useState('')
+  const [isFormMode, setIsFormMode] = useState(false)
 
   const setDefaultImage = (e: React.SyntheticEvent<HTMLImageElement>): void => {
-    (e.target as HTMLImageElement).onerror = null;
-    (e.target as HTMLImageElement).src = defaultIconUrl;
-  };
+    ;(e.target as HTMLImageElement).onerror = null
+    ;(e.target as HTMLImageElement).src = defaultIconUrl
+  }
 
   const getFilteredItemList = () => {
     if (!search || !search.length) {
-      return itemList;
+      return itemList
     }
 
     return itemList.filter(
-      (i) =>
+      i =>
         i.name.toLowerCase().includes(search.toLowerCase()) ||
         i.description?.toLowerCase().includes(search.toLowerCase())
-    );
-  };
+    )
+  }
 
   const getBody = () => {
     return isFormMode ? (
@@ -152,7 +152,7 @@ const ManageList = ({
           <SearchContainer>
             <Icon size="md" type="search" />
             <SearchInput
-              onChange={(event) => setSearch(event.target.value)}
+              onChange={event => setSearch(event.target.value)}
               placeholder="Search"
               value={search}
             />
@@ -168,9 +168,9 @@ const ManageList = ({
           </Button>
         </BodyHeader>
         <div>
-          {getFilteredItemList().map((i) => {
-            const onChange = (checked: boolean) => onItemToggle(i.id, checked);
-            const onDeleteClick = () => onItemDeleted?.(i.id);
+          {getFilteredItemList().map(i => {
+            const onChange = (checked: boolean) => onItemToggle(i.id, checked)
+            const onDeleteClick = () => onItemDeleted?.(i.id)
 
             return (
               <StyledItem key={i.id}>
@@ -214,12 +214,12 @@ const ManageList = ({
                   </>
                 )}
               </StyledItem>
-            );
+            )
           })}
         </div>
       </>
-    );
-  };
+    )
+  }
 
   const getFooter = () => {
     return !isFormMode ? null : (
@@ -229,8 +229,8 @@ const ManageList = ({
         handleCancel={() => setIsFormMode(false)}
         handleOk={onSubmitForm}
       />
-    );
-  };
+    )
+  }
 
   return (
     <GenericModal
@@ -240,7 +240,7 @@ const ManageList = ({
       footer={getFooter()}
       withoutBodyPadding
     />
-  );
-};
+  )
+}
 
-export default ManageList;
+export default ManageList

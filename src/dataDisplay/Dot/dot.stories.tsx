@@ -1,6 +1,6 @@
-import React from 'react';
+import React from 'react'
 
-import { Dot, Text, Icon } from '../../index';
+import { Dot, Text, Icon } from '../../index'
 
 export default {
   title: 'Data Display/Dot',
@@ -8,7 +8,7 @@ export default {
   parameters: {
     componentSubtitle: 'Generic Dot container for text or icons.',
   },
-};
+}
 
 export const DotWithText = (): React.ReactElement => (
   <Dot color="primary">
@@ -16,10 +16,10 @@ export const DotWithText = (): React.ReactElement => (
       1
     </Text>
   </Dot>
-);
+)
 
 export const DotWithIcon = (): React.ReactElement => (
   <Dot color="rinkeby">
     <Icon color="white" type="check" size="sm" />
   </Dot>
-);
+)

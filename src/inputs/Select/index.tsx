@@ -1,36 +1,36 @@
-import React from 'react';
-import MenuItem from '@material-ui/core/MenuItem';
+import React from 'react'
+import MenuItem from '@material-ui/core/MenuItem'
 import SelectMUI, {
   SelectProps as SelectMuiProps,
-} from '@material-ui/core/Select';
-import FormControl from '@material-ui/core/FormControl';
-import FormHelperText from '@material-ui/core/FormHelperText';
-import InputLabel from '@material-ui/core/InputLabel';
-import styled from 'styled-components';
+} from '@material-ui/core/Select'
+import FormControl from '@material-ui/core/FormControl'
+import FormHelperText from '@material-ui/core/FormHelperText'
+import InputLabel from '@material-ui/core/InputLabel'
+import styled from 'styled-components'
 
-import { Text } from '../../dataDisplay';
+import { Text } from '../../dataDisplay'
 
-import { inputLabelStyles, inputStyles, errorStyles } from '../styles';
+import { inputLabelStyles, inputStyles, errorStyles } from '../styles'
 
 export type SelectItem = {
-  id: string;
-  label: string;
-  subLabel?: string;
-  iconUrl?: string;
-};
+  id: string
+  label: string
+  subLabel?: string
+  iconUrl?: string
+}
 
 type SelectProps = {
-  id?: string;
-  name: string;
-  label: string;
-  error?: string;
-  helperText?: string | undefined;
-  showErrorsInTheLabel?: boolean | undefined;
-  items: Array<SelectItem>;
-  activeItemId: string;
-  onItemClick: (id: string) => void;
-  fallbackImage?: string;
-} & Omit<SelectMuiProps, 'error'>;
+  id?: string
+  name: string
+  label: string
+  error?: string
+  helperText?: string | undefined
+  showErrorsInTheLabel?: boolean | undefined
+  items: Array<SelectItem>
+  activeItemId: string
+  onItemClick: (id: string) => void
+  fallbackImage?: string
+} & Omit<SelectMuiProps, 'error'>
 
 function Select({
   id,
@@ -47,30 +47,30 @@ function Select({
   disabled,
   ...rest
 }: SelectProps): React.ReactElement {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(false)
 
-  const hasError = !!error;
+  const hasError = !!error
 
   const handleChange = (event: React.ChangeEvent<{ value: unknown }>) => {
-    onItemClick(event.target.value as string);
-  };
+    onItemClick(event.target.value as string)
+  }
 
   const handleClose = () => {
-    setOpen(false);
-  };
+    setOpen(false)
+  }
 
   const handleOpen = () => {
-    setOpen(true);
-  };
+    setOpen(true)
+  }
 
-  const onFallbackImage: React.ReactEventHandler<HTMLImageElement> = (e) => {
+  const onFallbackImage: React.ReactEventHandler<HTMLImageElement> = e => {
     if (!fallbackImage) {
-      return;
+      return
     }
 
-    (e.target as HTMLImageElement).onerror = null;
-    (e.target as HTMLImageElement).src = fallbackImage;
-  };
+    ;(e.target as HTMLImageElement).onerror = null
+    ;(e.target as HTMLImageElement).src = fallbackImage
+  }
 
   return (
     <StyledFormControl
@@ -95,7 +95,7 @@ function Select({
         variant="outlined"
         disabled={disabled}
         {...rest}>
-        {items.map((i) => {
+        {items.map(i => {
           return (
             <MenuItem value={i.id} key={i.id}>
               {i.iconUrl && (
@@ -116,7 +116,7 @@ function Select({
                 )}
               </div>
             </MenuItem>
-          );
+          )
         })}
       </StyledSelect>
       {(helperText || (error && showErrorsInTheLabel)) && (
@@ -125,13 +125,13 @@ function Select({
         </StyledFormHelperText>
       )}
     </StyledFormControl>
-  );
+  )
 }
 
 const IconImg = styled.img`
   width: 20px;
   margin-right: 10px;
-`;
+`
 
 const StyledSelect = styled(SelectMUI)`
   && {
@@ -146,7 +146,7 @@ const StyledSelect = styled(SelectMUI)`
     }
 
     .MuiSelect-selectMenu {
-      font-family: ${(props) => props.theme.fonts.fontFamily};
+      font-family: ${props => props.theme.fonts.fontFamily};
     }
 
     && {
@@ -161,7 +161,7 @@ const StyledSelect = styled(SelectMUI)`
       }
     }
   }
-`;
+`
 
 const StyledFormControl = styled(FormControl)`
   && {
@@ -169,12 +169,12 @@ const StyledFormControl = styled(FormControl)`
     ${inputStyles}
     ${errorStyles}
   }
-`;
+`
 
 const StyledFormHelperText = styled(FormHelperText)`
   && {
-    font-family: ${(props) => props.theme.fonts.fontFamily};
+    font-family: ${props => props.theme.fonts.fontFamily};
   }
-`;
+`
 
-export default Select;
+export default Select

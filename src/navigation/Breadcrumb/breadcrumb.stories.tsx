@@ -1,6 +1,6 @@
-import React from 'react';
+import React from 'react'
 
-import { Breadcrumb, BreadcrumbElement } from './index';
+import { Breadcrumb, BreadcrumbElement } from './index'
 
 export default {
   title: 'navigation/Breadcrumb',
@@ -8,33 +8,33 @@ export default {
   parameters: {
     componentSubtitle: 'Breadcrumb component used in Safe Multisig.',
   },
-};
+}
 
 export const Breadcrumbs = (): React.ReactElement => (
   <Breadcrumb>
     <BreadcrumbElement text="Address Book" iconType="addressBook" counter="8" />
     <BreadcrumbElement text="Second Level" color="placeHolder" />
   </Breadcrumb>
-);
+)
 
 export const RootElementAlone = (): React.ReactElement => (
   <Breadcrumb>
     <BreadcrumbElement text="Transactions" iconType="transactionsInactive" />
   </Breadcrumb>
-);
+)
 
 export const Counter = (): React.ReactElement => (
   <Breadcrumb>
     <BreadcrumbElement text="Address Book" iconType="addressBook" counter="8" />
   </Breadcrumb>
-);
+)
 
 export const SubSection = (): React.ReactElement => (
   <Breadcrumb>
     <BreadcrumbElement text="Assets" iconType="assets" />
     <BreadcrumbElement text="Coins" color="placeHolder" />
   </Breadcrumb>
-);
+)
 
 export const FullOptions = (): React.ReactElement => (
   <Breadcrumb>
@@ -52,4 +52,4 @@ export const FullOptions = (): React.ReactElement => (
       color="placeHolder"
     />
   </Breadcrumb>
-);
+)

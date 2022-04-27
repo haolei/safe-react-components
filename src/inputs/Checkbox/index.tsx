@@ -1,23 +1,23 @@
-import CheckboxMUI from '@material-ui/core/Checkbox';
-import FormControl from '@material-ui/core/FormControl';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import FormHelperText from '@material-ui/core/FormHelperText';
-import { withStyles } from '@material-ui/core/styles';
-import React from 'react';
-import styled from 'styled-components';
+import CheckboxMUI from '@material-ui/core/Checkbox'
+import FormControl from '@material-ui/core/FormControl'
+import FormControlLabel from '@material-ui/core/FormControlLabel'
+import FormHelperText from '@material-ui/core/FormHelperText'
+import { withStyles } from '@material-ui/core/styles'
+import React from 'react'
+import styled from 'styled-components'
 
-import theme from '../../theme';
+import theme from '../../theme'
 
 export interface Props {
-  label: React.ReactNode;
-  checked: boolean;
-  name: string;
+  label: React.ReactNode
+  checked: boolean
+  name: string
   onChange: (
     event: React.ChangeEvent<HTMLInputElement>,
     checked: boolean
-  ) => void;
-  meta?: any;
-  input?: any; // added for compatibility with react-final-form
+  ) => void
+  meta?: any
+  input?: any // added for compatibility with react-final-form
 }
 
 const CustomCheckbox = withStyles({
@@ -27,7 +27,7 @@ const CustomCheckbox = withStyles({
       color: theme.colors.primary,
     },
   },
-})((props: any) => <CheckboxMUI color="default" {...props} />);
+})((props: any) => <CheckboxMUI color="default" {...props} />)
 
 const StyledFormHelperText = styled(FormHelperText)`
   && {
@@ -36,7 +36,7 @@ const StyledFormHelperText = styled(FormHelperText)`
     padding-left: 0px;
     position: relative;
   }
-`;
+`
 
 const Checkbox = ({
   checked,
@@ -47,11 +47,11 @@ const Checkbox = ({
   ...rest
 }: Props): React.ReactElement => {
   const getCheckboxForReactFinalForm = () => {
-    const { name, value, ...inputRest } = input;
+    const { name, value, ...inputRest } = input
     return (
       <CustomCheckbox {...rest} name={name} checked={!!value} {...inputRest} />
-    );
-  };
+    )
+  }
 
   return (
     <FormControl component="fieldset">
@@ -69,7 +69,7 @@ const Checkbox = ({
       />
       {meta?.error && <StyledFormHelperText>{meta.error}</StyledFormHelperText>}
     </FormControl>
-  );
-};
+  )
+}
 
-export default Checkbox;
+export default Checkbox

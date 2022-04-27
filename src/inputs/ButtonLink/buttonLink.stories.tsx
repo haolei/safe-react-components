@@ -1,6 +1,6 @@
-import React from 'react';
+import React from 'react'
 
-import ButtonLink from './index';
+import ButtonLink from './index'
 
 export default {
   title: 'inputs/ButtonLink',
@@ -8,13 +8,13 @@ export default {
   parameters: {
     componentSubtitle: 'Button component as a Link.',
   },
-};
+}
 
 export const SimpleButtonLink = (): React.ReactElement => (
   <ButtonLink color="primary" iconType="add">
     Some text
   </ButtonLink>
-);
+)
 
 export const IconSize = (): React.ReactElement => (
   <>
@@ -25,4 +25,4 @@ export const IconSize = (): React.ReactElement => (
       Big Icon
     </ButtonLink>
   </>
-);
+)

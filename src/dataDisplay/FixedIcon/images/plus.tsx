@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 const icon = (
   <svg
@@ -12,6 +12,6 @@ const icon = (
       d="M6 4h3c.552 0 1 .448 1 1s-.448 1-1 1H6v3c0 .552-.448 1-1 1s-1-.448-1-1V6H1c-.552 0-1-.448-1-1s.448-1 1-1h3V1c0-.552.448-1 1-1s1 .448 1 1v3z"
     />
   </svg>
-);
+)
 
-export default icon;
+export default icon

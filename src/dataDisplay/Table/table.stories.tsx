@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 
-import { Table, TableAlignment, TableRow, TableSortDirection } from './index';
-import { Icon } from '../../';
+import { Table, TableAlignment, TableRow, TableSortDirection } from './index'
+import { Icon } from '../../'
 
 export default {
   title: 'Data Display/Table',
@@ -10,7 +10,7 @@ export default {
     componentSubtitle:
       'Used for tabular information. It allows sorting by a single column.',
   },
-};
+}
 
 const headerCells = [
   {
@@ -29,7 +29,7 @@ const headerCells = [
     label: 'col3',
     hideSortIcon: true,
   },
-];
+]
 
 const rows = [
   {
@@ -66,44 +66,44 @@ const rows = [
       },
     ],
   },
-];
+]
 
 export const SimpleTable = (): React.ReactElement => (
   <Table headers={headerCells} rows={rows} />
-);
+)
 
-export const WithoutHeader = (): React.ReactElement => <Table rows={rows} />;
+export const WithoutHeader = (): React.ReactElement => <Table rows={rows} />
 
 export const Sortable = (): React.ReactElement => {
   const [sortedByHeaderId, setSortedByHeaderId] = useState<string | undefined>(
     'col2'
-  );
+  )
   const [sortDirection, setSortDirection] = useState<TableSortDirection>(
     TableSortDirection.asc
-  );
+  )
 
   const onHeaderClick = (headerId: string) => {
     if (!['col2'].includes(headerId)) {
-      return;
+      return
     }
 
     const newDirection =
       sortedByHeaderId === headerId && sortDirection === TableSortDirection.asc
         ? TableSortDirection.desc
-        : TableSortDirection.asc;
+        : TableSortDirection.asc
 
-    setSortDirection(newDirection);
-    setSortedByHeaderId(headerId);
-  };
+    setSortDirection(newDirection)
+    setSortedByHeaderId(headerId)
+  }
 
   const getSortedRows = () => {
-    const cp = [...rows];
+    const cp = [...rows]
     return cp.sort((a, b) => {
       return sortDirection === TableSortDirection.asc
         ? Number(a.cells[1].content) - Number(b.cells[1].content)
-        : Number(b.cells[1].content) - Number(a.cells[1].content);
-    });
-  };
+        : Number(b.cells[1].content) - Number(a.cells[1].content)
+    })
+  }
 
   return (
     <Table
@@ -114,21 +114,21 @@ export const Sortable = (): React.ReactElement => {
       sortDirection={sortDirection}
       onHeaderClick={onHeaderClick}
     />
-  );
-};
+  )
+}
 
 export const Collapsible = (): React.ReactElement => {
-  const [selectedRowIds, setSelectedRowIds] = useState<Set<string>>(new Set());
+  const [selectedRowIds, setSelectedRowIds] = useState<Set<string>>(new Set())
 
   const onRowClick = (rowId: string) => {
-    const cp = new Set(selectedRowIds);
+    const cp = new Set(selectedRowIds)
     if (cp.has(rowId)) {
-      cp.delete(rowId);
+      cp.delete(rowId)
     } else {
-      cp.add(rowId);
+      cp.add(rowId)
     }
-    setSelectedRowIds(cp);
-  };
+    setSelectedRowIds(cp)
+  }
 
   return (
     <Table
@@ -138,8 +138,8 @@ export const Collapsible = (): React.ReactElement => {
       selectedRowIds={selectedRowIds}
       onRowClick={onRowClick}
     />
-  );
-};
+  )
+}
 
 export const FixedHeader = (): React.ReactElement => {
   const manyRows: TableRow[] = Array.from(new Array<string>(100).keys()).map(
@@ -160,7 +160,7 @@ export const FixedHeader = (): React.ReactElement => {
         },
       ],
     })
-  );
+  )
   return (
     <Table
       isStickyHeader={true}
@@ -168,5 +168,5 @@ export const FixedHeader = (): React.ReactElement => {
       headers={headerCells}
       rows={manyRows}
     />
-  );
-};
+  )
+}

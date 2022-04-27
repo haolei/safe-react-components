@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 
-import Switch from './index';
+import Switch from './index'
 
 export default {
   title: 'Inputs/Switch',
@@ -8,9 +8,9 @@ export default {
   parameters: {
     componentSubtitle: 'Switch input component.',
   },
-};
+}
 
 export const SwitchInput = (): React.ReactElement => {
-  const [enabled, setEnabled] = useState(true);
-  return <Switch checked={enabled} onChange={setEnabled} />;
-};
+  const [enabled, setEnabled] = useState(true)
+  return <Switch checked={enabled} onChange={setEnabled} />
+}
